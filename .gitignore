@@ -1,0 +1,28 @@
+# vs code
+.vscode/
+
+# build directories
+public/
+build_*/
+assets/js/dist/
+
+# resource cache
+resources/
+
+# node modules
+node_modules/
+
+# logs
+*.log
+
+# python
+venv/
+*.pyc
+secrets.py
+
+# translations
+i18n/
+
+# content and data
+content/
+data/

@@ -1,0 +1,22 @@
+languageCode = "de"
+title = "Notify Me - Webpages"
+
+DefaultContentLanguage = "de"
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+
+[params]
+  description = "Generate QR Codes for Notify Me"
+
+[languages]
+  [languages.de]
+    weight = 1
+    languageName = "Deutsch"
+  [languages.fr]
+    weight = 2
+    languageName = "Français"
+  [languages.en]
+    weight = 2
+    languageName = "English"
+
+[markup.goldmark.renderer]
+  unsafe= true
