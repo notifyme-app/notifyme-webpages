@@ -49,4 +49,21 @@ header {
             color: $primary;
         }
     }
+
+    @media only screen and (max-width: $mobile) {
+        margin-top: 17px;
+
+        img {
+            width: 35px;
+            height: 35px;
+
+            margin-right: 11px;
+        }
+
+        h1 {
+            line-height: 35px;
+            flex-grow: 1;
+            font-size: 18px;
+        }
+    }
 }

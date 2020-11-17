@@ -1,6 +1,5 @@
 <head>
-    {{ $title := (cond ((eq .Title $.Site.Title) | or (not .Title)) $.Site.Title (printf "%s | %s" .Title $.Site.Title)) }}
-    <title>{{ $title }}</title>
+    <title>{{ $.Site.Title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ $.Site.Params.description }}">
@@ -30,8 +29,8 @@
     {{ $styles := slice $materialize $main | resources.Concat "css/bundle.css" }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-    {{/*  {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }}  */}}
+    {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }}
     {{ $main := resources.Get "js/dist/main.min.js" | fingerprint }}
-    {{/*  <script type="text/javascript" src="{{ $vendors.Permalink }}" integrity="{{ $vendors.Data.Integrity }}"></script>  */}}
+    <script type="text/javascript" src="{{ $vendors.Permalink }}" integrity="{{ $vendors.Data.Integrity }}"></script>
     <script type="text/javascript" src="{{ $main.Permalink }}" integrity="{{ $main.Data.Integrity }}"></script>
 </head>

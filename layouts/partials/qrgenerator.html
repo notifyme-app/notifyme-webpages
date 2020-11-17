@@ -1,1 +1,33 @@
-QRGenerator
+<div id="qrgenerator" class="row">
+    <div id="generator-card" class="card white">
+        <div class="card-content">
+            <span class="card-title">Demo QR-Codes erstellen</span>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="category" id="category">
+                        <option value="0">Other</option>
+                        <option value="1">Meeting room</option>
+                        <option value="2">Cafeteria</option>
+                        <option value="3">Private party</option>
+                    </select>
+                    <label>Kategorie*</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="z.B. Raum- oder Eventname" name="title" id="title" type="text" class="validate" required>
+                    <label for="title">Titel*</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="z.B. Organistaion oder Veranstalter" name="subtitle" id="subtitle" type="text" class="validate" required>
+                    <label for="subtitle">Untertitel*</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="z.B. Gebäude oder Ort" name="addition" id="addition" type="text" class="validate">
+                    <label for="addition">Zusatz</label>
+                </div>
+            </div>
+            <div id="btn-row" class="row">
+                <a id="generate-qr-btn" class="waves-effect waves-light btn">QR-Code erstellen</a>
+            </div>
+        </div>
+    </div>
+</div>

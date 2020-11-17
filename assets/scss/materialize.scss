@@ -4,6 +4,9 @@
 @import "../../node_modules/materialize-css/sass/components/color-variables";
 @import "../../node_modules/materialize-css/sass/components/color-classes";
 
+$primary-color: #413f8d;
+$secondary-color: #00a690;
+
 // Variables;
 @import "../../node_modules/materialize-css/sass/components/variables";
 
@@ -12,30 +15,30 @@
 
 // components
 @import "../../node_modules/materialize-css/sass/components/global";
-// @import "components/badges";
-// @import "components/icons-material-design";
+// @import "../../node_modules/materialize-css/sass/components/badges";
+// @import "../../node_modules/materialize-css/sass/components/icons-material-design";
 @import "../../node_modules/materialize-css/sass/components/grid";
-// @import "components/navbar";
-// @import "components/typography";
-// @import "components/transitions";
-// @import "components/cards";
-// @import "components/toast";
-// @import "components/tabs";
-// @import "components/tooltip";
-// @import "components/buttons";
-// @import "components/dropdown";
-// @import "components/waves";
-// @import "components/modal";
-// @import "components/collapsible";
+// @import "../../node_modules/materialize-css/sass/components/navbar";
+@import "../../node_modules/materialize-css/sass/components/typography";
+@import "../../node_modules/materialize-css/sass/components/transitions";
+@import "../../node_modules/materialize-css/sass/components/cards";
+// @import "../../node_modules/materialize-css/sass/components/toast";
+// @import "../../node_modules/materialize-css/sass/components/tabs";
+// @import "../../node_modules/materialize-css/sass/components/tooltip";
+@import "../../node_modules/materialize-css/sass/components/buttons";
+@import "../../node_modules/materialize-css/sass/components/dropdown";
+@import "../../node_modules/materialize-css/sass/components/waves";
+// @import "../../node_modules/materialize-css/sass/components/modal";
+// @import "../../node_modules/materialize-css/sass/components/collapsible";
 // @import "../../node_modules/materialize-css/sass/components/chips";
-// @import "components/materialbox";
-// @import "components/forms/forms";
-// @import "components/table_of_contents";
-// @import "components/sidenav";
-// @import "components/preloader";
-// @import "components/slider";
+@import "../../node_modules/materialize-css/sass/components/materialbox";
+@import "../../node_modules/materialize-css/sass/components/forms/forms";
+// @import "../../node_modules/materialize-css/sass/components/table_of_contents";
+// @import "../../node_modules/materialize-css/sass/components/sidenav";
+// @import "../../node_modules/materialize-css/sass/components/preloader";
+// @import "../../node_modules/materialize-css/sass/components/slider";
 // @import "../../node_modules/materialize-css/sass/components/carousel";
-// @import "components/tapTarget";
-// @import "components/pulse";
-// @import "components/datepicker";
-// @import "components/timepicker";
+// @import "../../node_modules/materialize-css/sass/components/tapTarget";
+// @import "../../node_modules/materialize-css/sass/components/pulse";
+// @import "../../node_modules/materialize-css/sass/components/datepicker";
+// @import "../../node_modules/materialize-css/sass/components/timepicker";

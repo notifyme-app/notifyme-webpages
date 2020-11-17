@@ -1,2 +1,5 @@
+title = "NotifyMe - QR-Code Generator"
+
 [params]
+  description = "This generator creates QR-Codes which can be used with the NotifyMe app"
   PageVariant = "qrgenerator"
