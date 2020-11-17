@@ -73,6 +73,17 @@ const generateKeys = async (qrButton) => {
         category: formData.get("category")
     }
 
+    if(!data.title || !data.subtitle) {
+        if(!data.title) {
+            document.getElementById("title").classList.add("invalid");
+        }
+        if(!data.subtitle) {
+            document.getElementById("subtitle").classList.add("invalid");
+        }
+        enableButton(qrButton);
+        return;
+    }
+
     const { privateMessage, publicMessage } = await generateProtoBufs(data.title, data.subtitle, data.addition, data.category, `${PUBLIC_KEY}`);
 
     showFormData(data);
