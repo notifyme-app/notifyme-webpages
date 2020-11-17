@@ -2,7 +2,7 @@ languageCode = "de"
 title = "Notify Me - Webpages"
 
 DefaultContentLanguage = "de"
-disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
   description = "Generate QR Codes for Notify Me"

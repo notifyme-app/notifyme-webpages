@@ -1,2 +1,15 @@
 <header>
+    <img src="images/logo.svg" alt="Logo">
+    <h1>Notify<span class="primary-color">Me</span></h1>
+    <div class="language-selection">
+        {{ $lang := .Site.Language.Lang }}
+        {{ range .AllTranslations }}
+        {{ if eq $lang .Lang }}
+        <span>{{ .Lang }}</span>
+        {{ else }}
+        <a href="{{ .Permalink }}">{{ .Lang }}</a>
+        {{ end }}
+        
+        {{ end }}
+      </div>
 </header>

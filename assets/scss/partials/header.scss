@@ -1,0 +1,52 @@
+header {
+    display: flex;
+    margin-top: 40px;
+
+    img {
+        width: 42px;
+        height: 42px;
+
+        margin-right: 14px;
+    }
+
+    h1 {
+        margin: 0;
+        line-height: 42px;
+        flex-grow: 1;
+    }
+
+    .language-selection {
+        margin-top: 13px;
+        & > * {
+            text-transform: uppercase;
+            line-height: 16px;
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 0.33px;
+
+            &:not(:last-child) {
+                padding-right: 10px;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    right: 0;
+                    top: 2px;
+                    content: "";
+                    height: 13px;
+                    width: 1px;
+                    background-color: $primary;
+                }
+            }
+
+            &:not(:first-child) {
+                padding-left: 5px;
+            }
+        }
+
+        a {
+            color: $primary;
+        }
+    }
+}

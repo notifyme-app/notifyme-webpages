@@ -36,3 +36,21 @@
     font-style: normal;
     font-stretch: normal;
 }
+
+body {
+    font-family: Inter;
+    font-weight: 300;
+}
+
+h1 {
+    color: black;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+
+.primary-color {
+    color: $primary;
+}
