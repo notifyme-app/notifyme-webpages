@@ -43,6 +43,22 @@
 }
 
 #qrgenerator {
+    position: relative;
+
+    #illu-base {
+        position: absolute;
+        right: calc(100% / 2 - 102px - 293px);
+        bottom: calc(145px - 72px);
+        z-index: 0;
+    }
+
+    #illu-main {
+        position: absolute;
+        right: calc(100% / 2 - 214px - 148px);
+        bottom: calc(145px - 46px);
+        z-index: 2;
+    }
+
     #generator-card {
         max-width: 458px;
         margin: 77px auto 0 auto;
