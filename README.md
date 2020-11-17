@@ -7,11 +7,11 @@
 
 ### Start Server
 
-A dev server can be started with `hugo server`
+A dev server can be started with `hugo --config config.toml,config_qrgenerator server`
 
 ### Build Site
 
-The site can be build with the command `hugo`. The static files are placed in the `public/` folder.
+The site can be build with the command `hugo --config config.toml,config_qrgenerator`. The static files are placed in the `public/` folder.
 
 ### Getting the translations
 
