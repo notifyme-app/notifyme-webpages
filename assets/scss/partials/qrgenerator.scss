@@ -5,8 +5,6 @@
 }
 
 #qrgenerator {
-    display: none;
-
     #generator-card {
         max-width: 458px;
         margin: 77px auto 0 auto;
@@ -120,7 +118,7 @@
 }
 
 #qrcodes {
-    // display: none;
+    display: none;
 
     .row {
         margin: 0;
@@ -182,6 +180,65 @@
                     width: 100%;
                     height: auto;
                 }
+            }
+
+            .information {
+                width: 100%;
+                border-radius: 36px;
+                position: relative;
+                margin-top: 63px;
+                padding: 50px 26px 82px 26px;
+
+                & > img {
+                    width: 60px;
+                    height: 60px;
+                    position: absolute;
+                    top: -30px;
+                    left: calc(100% / 2 - 30px);
+                }
+
+                .bullet-point {
+                    display: flex;
+
+                    &:not(:first-child) {
+                        margin-top: 20px;
+                    }
+
+                    .bullet-icon {
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 10px;
+                    }
+
+                    .text {
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 22px;
+                        letter-spacing: .1px;
+                    }
+                }
+            }
+        }
+
+        &#public-qr-card {
+            .qr-code svg path {
+                stroke: $primary;
+                fill: $primary;
+            }
+
+            .information {
+                background-color: $primary-light;
+            }
+        }
+
+        &#private-qr-card {
+            .qr-code svg path {
+                stroke: $tertiary;
+                fill: $tertiary;
+            }
+
+            .information {
+                background-color: $tertiary-light;
             }
         }
     }
