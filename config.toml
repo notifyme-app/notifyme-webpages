@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     weight = 2
     languageName = "Français"
   [languages.en]
-    weight = 2
+    weight = 3
     languageName = "English"
 
 [markup.goldmark.renderer]

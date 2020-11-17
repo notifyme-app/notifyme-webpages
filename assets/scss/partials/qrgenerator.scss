@@ -269,6 +269,10 @@
 
                     .information {
                         background-color: $primary-light;
+
+                        h1 span {
+                            color: $primary;
+                        }
                     }
                 }
 
@@ -276,6 +280,10 @@
 
                     .information {
                         background-color: $tertiary-light;
+
+                        h1 span {
+                            color: $tertiary;
+                        }
                     }
                 }
             }

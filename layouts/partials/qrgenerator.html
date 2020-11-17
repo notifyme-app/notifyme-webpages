@@ -1,38 +1,38 @@
 <div id="qrgenerator" class="row">
     <div id="generator-card" class="card white">
         <div class="card-content">
-            <span class="card-title">Demo QR-Codes erstellen</span>
+            <span class="card-title">{{ i18n "generator_title" }}</span>
             <form id="qr-form">
                 <div class="row">
                     <div class="input-field col s12">
                         <select name="category" id="category">
-                            <option value="0">Other</option>
-                            <option value="1">Meeting room</option>
-                            <option value="2">Cafeteria</option>
-                            <option value="3">Private party</option>
+                            <option value="0">{{ i18n "generator_category_other" }}</option>
+                            <option value="1">{{ i18n "generator_category_meeting_room" }}</option>
+                            <option value="2">{{ i18n "generator_category_cafeteria" }}</option>
+                            <option value="3">{{ i18n "generator_category_private_party" }}</option>
                         </select>
-                        <label>Kategorie*</label>
+                        <label>{{ i18n "generator_category_label" }}*</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="z.B. Raum- oder Eventname" name="title" id="title" type="text"
+                        <input placeholder="{{ i18n "generator_title_placeholder" }}" name="title" id="title" type="text"
                             class="validate" required>
-                        <label for="title">Titel*</label>
+                        <label for="title">{{ i18n "generator_title_label" }}*</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="z.B. Organistaion oder Veranstalter" name="subtitle" id="subtitle"
+                        <input placeholder="{{ i18n "generator_subtitle_placeholder" }}" name="subtitle" id="subtitle"
                             type="text" class="validate" required>
-                        <label for="subtitle">Untertitel*</label>
+                        <label for="subtitle">{{ i18n "generator_subtitle_label" }}*</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="z.B. Gebäude oder Ort" name="addition" id="addition" type="text"
+                        <input placeholder="{{ i18n "generator_addition_placeholder" }}" name="addition" id="addition" type="text"
                             class="validate">
-                        <label for="addition">Zusatz</label>
+                        <label for="addition">{{ i18n "generator_addition_label" }}</label>
                     </div>
                 </div>
             </form>
             <div class="btn-row row">
                 <a id="generate-qr-btn" class="waves-effect waves-light btn">
-                    QR-Code erstellen
+                    {{ i18n "generator_generation_button_label" }}
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer">
                             <div class="circle-clipper left">
@@ -55,12 +55,12 @@
 <div id="qrcodes">
     <div id="back-to-generator" class="row">
         <img src="images/arrow-left.svg" alt="">
-        <div>Zurück</div>
+        <div>{{ i18n "generator_back" }}</div>
     </div>
     <div id="qr-information" class="row">
-        <div class="col s12" id="qr-title">Cyber Café SV</div>
-        <div class="col s12" id="qr-subtitle">EPFL Campus, Lausanne</div>
-        <div class="col s12" id="qr-addition">Some Addition</div>
+        <div class="col s12" id="qr-title"></div>
+        <div class="col s12" id="qr-subtitle"></div>
+        <div class="col s12" id="qr-addition"></div>
     </div>
     <div class="qr-card-wrapper row">
         <div class="single-qr-card">
@@ -70,25 +70,24 @@
                     <div class="information">
                         <img src="images/icon_public.svg" alt="">
                         <h1>
-                            <span class="primary-color">Public</span><br />
-                            QR-Code
+                            {{ i18n "generator_public_qr_title" | markdownify }}
                         </h1>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/visitors_icon.svg" alt="">
                             <div class="text">
-                                Mit diesem QR-Code können Besucher vor Ort einchecken.
+                                {{ i18n "generator_public_bulletpoint_1" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/mobile_icon.svg" alt="">
                             <div class="text">
-                                Der Code kann mit der NotifyMe App gescannt werden.
+                                {{ i18n "generator_public_bulletpoint_2" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/encryption_icon.svg" alt="">
                             <div class="text">
-                                Die Check-Ins werden nicht registriert und es werden keine privaten Daten der Besucher erfasst.
+                                {{ i18n "generator_public_bulletpoint_3" }}
                             </div>
                         </div>
                     </div>
@@ -102,25 +101,24 @@
                     <div class="information">
                         <img src="images/icon_private.svg" alt="">
                         <h1>
-                            <span class="tertiary-color">Private</span><br />
-                            QR-Code
+                            {{ i18n "generator_private_qr_title" | markdownify }}
                         </h1>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/message_icon.svg" alt="">
                             <div class="text">
-                                Mit diesem QR-Code können Besucher bei einem Vorfall informiert werden.
+                                {{ i18n "generator_private_bulletpoint_1" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/mobile_icon_red.svg" alt="">
                             <div class="text">
-                                Der Code kann mit einem beliebigen QR-Code Leser gescannt werden.
+                                {{ i18n "generator_private_bulletpoint_2" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/key_icon.svg" alt="">
                             <div class="text">
-                                Es wird nur ein Entschlüsselungs-Schlüssel veröffentlicht. Keine Angaben zum Veranstalter.
+                                {{ i18n "generator_private_bulletpoint_3" }}
                             </div>
                         </div>
                     </div>
@@ -130,7 +128,7 @@
     </div>
     <div class="btn-row row">
         <a id="download-pdf-btn" class="waves-effect waves-light btn" download="QR-Codes">
-            Download PDF
+            {{ i18n "generator_pdf_button" }}
             <div class="preloader-wrapper small active">
                 <div class="spinner-layer">
                     <div class="circle-clipper left">

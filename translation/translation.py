@@ -31,7 +31,7 @@ def loadLanguage( language, projectID, localesFolder, api_token ):
         for translation in results['list']:
             if translation['definition']['form'] == "":
                 continue
-            lineUtf8 = (translation['term'] + ": \n    other: \"" + translation['definition']['form'].replace('\\','\\\\').replace('\n', '\\n') + "\"\n").encode('UTF-8')
+            lineUtf8 = (translation['term'] + ": \n    other: \"" + translation['definition']['form'].replace('\\','\\\\').replace('\"', '\\\"').replace('\n', '\\n') + "\"\n").encode('UTF-8')
             fo.write(lineUtf8);
 
         # Close opend file
