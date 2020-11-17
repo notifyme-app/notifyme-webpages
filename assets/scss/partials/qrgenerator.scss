@@ -1,6 +1,44 @@
-#qrcodes, #qrgenerator {
+#qrcodes,
+#qrgenerator {
+    padding-bottom: 145px;
+
+    @media screen and (max-width: $large) {
+        padding-bottom: 56px;
+    }
+
     .card {
         border-radius: 36px;
+        margin: 0;
+    }
+
+    .btn-row {
+        text-align: center;
+
+        a {
+            background-color: $primary;
+            color: white;
+            height: 72px;
+            line-height: 72px;
+            border-radius: 32px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1.2px;
+            padding: 0 50px;
+            position: relative;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $primary-dark;
+            }
+
+            .preloader-wrapper {
+                display: none;
+                position: absolute;
+                left: 7px;
+                top: 18px;
+            }
+        }
     }
 }
 
@@ -77,40 +115,13 @@
                 }
             }
 
-            #btn-row {
-                text-align: center;
+            .btn-row {
                 margin-top: 26px;
-
-                a {
-                    background-color: $primary;
-                    color: white;
-                    height: 72px;
-                    line-height: 72px;
-                    border-radius: 32px;
-                    font-weight: 700;
-                    font-size: 16px;
-                    letter-spacing: 1.2px;
-                    padding: 0 50px;
-                    position: relative;
-
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        background-color: $primary-dark;
-                    }
-
-                    .preloader-wrapper {
-                        display: none;
-                        position: absolute;
-                        left: 7px;
-                        top:  18px;
-                    }
-                }
             }
         }
     }
 
-    @media only screen and (max-width: $mobile) {
+    @media screen and (max-width: $mobile) {
         #generator-card {
             margin-top: 43px;
         }
@@ -143,6 +154,10 @@
             font-size: 28px;
             line-height: 30px;
             letter-spacing: 0;
+
+            @media screen and (max-width: $mobile) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -158,7 +173,8 @@
             margin-bottom: 5px;
         }
 
-        #qr-subtitle, #qr-addition {
+        #qr-subtitle,
+        #qr-addition {
             font-weight: 300;
             font-size: 16px;
             line-height: 22px;
@@ -167,79 +183,113 @@
         }
     }
 
-    .key-card {
-        .card-content {
-            padding: 42px 15px 16px 15px;
+    .qr-card-wrapper {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 8.3333333%;
 
-            .qr-code {
-                width: 161px;
-                height: 161px;
-                margin: 0 auto;
+        @media screen and (max-width: $large) {
+            display: block;
+            padding: 0;
 
-                svg {
-                    width: 100%;
-                    height: auto;
-                }
+            .single-qr-card:first-child {
+                margin-bottom: 20px;
             }
+        }
 
-            .information {
-                width: 100%;
-                border-radius: 36px;
-                position: relative;
-                margin-top: 63px;
-                padding: 50px 26px 82px 26px;
+        .single-qr-card {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 0 0.75rem;
 
-                & > img {
-                    width: 60px;
-                    height: 60px;
-                    position: absolute;
-                    top: -30px;
-                    left: calc(100% / 2 - 30px);
-                }
+            .key-card {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
 
-                .bullet-point {
+                .card-content {
+                    padding: 42px 15px 16px 15px;
+                    flex: 1;
                     display: flex;
+                    flex-direction: column;
 
-                    &:not(:first-child) {
-                        margin-top: 20px;
+                    .qr-code {
+                        width: 161px;
+                        height: 161px;
+                        margin: 0 auto;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
                     }
 
-                    .bullet-icon {
-                        width: 24px;
-                        height: 24px;
-                        margin-right: 10px;
-                    }
+                    .information {
+                        flex: 1;
+                        width: 100%;
+                        border-radius: 36px;
+                        position: relative;
+                        margin-top: 63px;
+                        padding: 50px 26px 82px 26px;
 
-                    .text {
-                        font-weight: 300;
-                        font-size: 16px;
-                        line-height: 22px;
-                        letter-spacing: .1px;
+                        & > img {
+                            width: 60px;
+                            height: 60px;
+                            position: absolute;
+                            top: -30px;
+                            left: calc(100% / 2 - 30px);
+                        }
+
+                        .bullet-point {
+                            display: flex;
+
+                            &:not(:first-child) {
+                                margin-top: 20px;
+                            }
+
+                            .bullet-icon {
+                                width: 24px;
+                                height: 24px;
+                                margin-right: 10px;
+                            }
+
+                            .text {
+                                font-weight: 300;
+                                font-size: 16px;
+                                line-height: 22px;
+                                letter-spacing: 0.1px;
+                            }
+                        }
+                    }
+                }
+
+                &#public-qr-card {
+
+                    .information {
+                        background-color: $primary-light;
+                    }
+                }
+
+                &#private-qr-card {
+
+                    .information {
+                        background-color: $tertiary-light;
                     }
                 }
             }
         }
 
-        &#public-qr-card {
-            .qr-code svg path {
-                stroke: $primary;
-                fill: $primary;
-            }
-
-            .information {
-                background-color: $primary-light;
+        @media screen and (max-width: $large) {
+            .single-qr-card {
+                width: 100%;
+                flex-shrink: unset;
             }
         }
+    }
 
-        &#private-qr-card {
-            .qr-code svg path {
-                stroke: $tertiary;
-                fill: $tertiary;
-            }
-
-            .information {
-                background-color: $tertiary-light;
-            }
-        }
+    .btn-row {
+        margin-top: 48px;
     }
 }

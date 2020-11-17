@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </form>
-            <div id="btn-row" class="row">
+            <div class="btn-row row">
                 <a id="generate-qr-btn" class="waves-effect waves-light btn">
                     QR-Code erstellen
                     <div class="preloader-wrapper small active">
@@ -62,8 +62,8 @@
         <div class="col s12" id="qr-subtitle">EPFL Campus, Lausanne</div>
         <div class="col s12" id="qr-addition">Some Addition</div>
     </div>
-    <div class="row">
-        <div class="col s12 l5 offset-l1">
+    <div class="qr-card-wrapper row">
+        <div class="single-qr-card">
             <div id="public-qr-card" class="card white key-card">
                 <div class="card-content">
                     <div class="qr-code"></div>
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 l5">
+        <div class="single-qr-card">
             <div id="private-qr-card" class="card white key-card">
                 <div class="card-content">
                     <div class="qr-code"></div>
@@ -127,5 +127,23 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="btn-row row">
+        <a id="download-pdf-btn" class="waves-effect waves-light btn" download="QR-Codes">
+            Download PDF
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
 </div>

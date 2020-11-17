@@ -1,16 +1,12 @@
+import QRCode from 'qrcode'
 
-import qrcode from 'qrcode-generator'
-
-const typeNumber = 0; // automatic
-const errorCorrectionLevel = 'L';
-const cellSize = 4;
-const margin = 0;
-
-const generateQrCode = (data) => {
-    const qrEntry = qrcode(typeNumber, errorCorrectionLevel);
-    qrEntry.addData(data);
-    qrEntry.make();
-    return qrEntry.createSvgTag(cellSize, margin);
+var defaultOptions = {
+    errorCorrectionLevel: 'L',
+    margin: 0,
 }
 
-export default generateQrCode;
+export const generateDataURL = async (data, options) => {
+    const mergedOptions = Object.assign({}, defaultOptions, options);
+    const dataURL = await QRCode.toDataURL(data, mergedOptions);
+    return dataURL;
+}
