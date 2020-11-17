@@ -1,7 +1,11 @@
-#qrgenerator {
+#qrcodes, #qrgenerator {
     .card {
         border-radius: 36px;
     }
+}
+
+#qrgenerator {
+    display: none;
 
     #generator-card {
         max-width: 458px;
@@ -89,11 +93,19 @@
                     font-size: 16px;
                     letter-spacing: 1.2px;
                     padding: 0 50px;
+                    position: relative;
 
                     &:hover,
                     &:active,
                     &:focus {
                         background-color: $primary-dark;
+                    }
+
+                    .preloader-wrapper {
+                        display: none;
+                        position: absolute;
+                        left: 7px;
+                        top:  18px;
                     }
                 }
             }
@@ -103,6 +115,74 @@
     @media only screen and (max-width: $mobile) {
         #generator-card {
             margin-top: 43px;
+        }
+    }
+}
+
+#qrcodes {
+    // display: none;
+
+    .row {
+        margin: 0;
+    }
+
+    #back-to-generator {
+        cursor: pointer;
+        display: flex;
+        margin-top: 56px;
+
+        img {
+            width: 25px;
+            height: 24px;
+            margin-left: 19px;
+            margin-top: 3px;
+        }
+
+        div {
+            margin-left: 6px;
+
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 30px;
+            letter-spacing: 0;
+        }
+    }
+
+    #qr-information {
+        margin-top: 31px;
+        text-align: center;
+
+        #qr-title {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 30px;
+            letter-spacing: 0;
+            margin-bottom: 5px;
+        }
+
+        #qr-subtitle, #qr-addition {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.4px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .key-card {
+        .card-content {
+            padding: 42px 15px 16px 15px;
+
+            .qr-code {
+                width: 161px;
+                height: 161px;
+                margin: 0 auto;
+
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
         }
     }
 }

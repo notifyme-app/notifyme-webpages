@@ -1,4 +1,5 @@
 import 'materialize-css';
+import { initializeQrGenerator } from "./qrgenerator/qrgenerator";
 
 let ready = (fn) => {
     if (document.readyState != 'loading') {
@@ -12,3 +13,5 @@ ready(() => {
     const elems = document.querySelectorAll('select');
     M.FormSelect.init(elems);
 });
+
+ready(initializeQrGenerator);
