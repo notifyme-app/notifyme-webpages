@@ -5,12 +5,23 @@
         margin-top: 166px;
         width: 160px;
         height: auto;
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 78px;
+            width: 140px;
+        }
     }
 
     h1#landing-title {
         font-size: 64px;
         line-height: 64px;
         margin-top: 31px;
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 20px;
+            font-size: 48px;
+            line-height: 48px;
+        }
     }
 
     p#landing-description {
@@ -21,6 +32,10 @@
         font-weight: 300;
         line-height: 1.38;
         letter-spacing: 0.4px;
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 8px;
+        }
     }
 
     #store-icons {
@@ -31,15 +46,18 @@
         & > div {
             flex-grow: 1;
             flex-basis: 270px;
+            text-align: center;
 
-            &:first-child {
-                text-align: right;
-                padding-right: 7px;
-            }
-
-            &:last-child {
-                text-align: left;
-                padding-left: 7px;
+            @media screen and (min-width: 644px) {
+                &:first-child {
+                    text-align: right;
+                    padding-right: 7px;
+                }
+    
+                &:last-child {
+                    text-align: left;
+                    padding-left: 7px;
+                }
             }
         }
     }
