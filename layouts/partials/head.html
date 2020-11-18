@@ -29,8 +29,8 @@
     {{ $styles := slice $materialize $main | resources.Concat "css/bundle.css" }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-    {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }}
-    {{ $main := resources.Get "js/dist/main.min.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $vendors.Permalink }}" integrity="{{ $vendors.Data.Integrity }}"></script>
+    {{/*  {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }}  */}}
+    {{ $main := resources.Get (printf "js/dist/%s.min.js" $.Site.Params.PageVariant) | fingerprint }}
+    {{/*  <script type="text/javascript" src="{{ $vendors.Permalink }}" integrity="{{ $vendors.Data.Integrity }}"></script>  */}}
     <script type="text/javascript" src="{{ $main.Permalink }}" integrity="{{ $main.Data.Integrity }}"></script>
 </head>

@@ -3,7 +3,9 @@ const webpack = require('webpack');
 
 module.exports = env => {
     return {
-        entry: ["babel-polyfill", './assets/js/index.js'],
+        entry: {
+            qrgenerator: ["babel-polyfill", './assets/js/qrgeneratorIndex.js'],
+        },
         output: {
             filename: '[name].min.js',
             path: path.resolve(__dirname, 'assets', 'js', 'dist')
@@ -32,17 +34,17 @@ module.exports = env => {
                 UPLOAD_URL: JSON.stringify(env.UPLOAD_URL),
             }),
         ],
-        optimization: {
-            splitChunks: {
-                cacheGroups: {
-                    commons: {
-                        test: /[\\/]node_modules[\\/]/,
-                        name: 'vendors',
-                        chunks: 'all'
-                    }
-                }
-            }
-        },
+        // optimization: {
+        //     splitChunks: {
+        //         cacheGroups: {
+        //             qrgenerator: {
+        //                 test: /[\\/]node_modules[\\/]/,
+        //                 name: 'qrgeneratorVendor',
+        //                 chunks: 'all'
+        //             }
+        //         }
+        //     }
+        // },
         resolve: {
           fallback: {
             path: require.resolve("path-browserify"),
