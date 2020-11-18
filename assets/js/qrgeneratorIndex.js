@@ -7,14 +7,7 @@ import 'materialize-css/js/select.js';
 import 'materialize-css/js/buttons.js';
 import 'materialize-css/js/waves.js';
 import { initializeQrGenerator } from "./qrgenerator/qrgenerator";
-
-const ready = (fn) => {
-    if (document.readyState != 'loading') {
-        fn();
-    } else {
-        document.addEventListener('DOMContentLoaded', fn);
-    }
-}
+import { ready } from "./utils/utils";
 
 ready(() => {
     const elems = document.querySelectorAll('select');

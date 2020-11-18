@@ -5,7 +5,7 @@ import 'materialize-css/js/forms.js';
 import 'materialize-css/js/buttons.js';
 import 'materialize-css/js/waves.js';
 import 'materialize-css/js/toasts.js';
-import { disableButton, enableButton } from './utils/utils';
+import { disableButton, enableButton, ready } from './utils/utils';
 
 require("flatpickr/dist/flatpickr.min.css");
 import flatpickr from "flatpickr";
@@ -62,14 +62,6 @@ const uploadData = async (button) => {
     }
 
     enableButton(button);
-}
-
-const ready = (fn) => {
-    if (document.readyState != 'loading') {
-        fn();
-    } else {
-        document.addEventListener('DOMContentLoaded', fn);
-    }
 }
 
 ready(() => {
