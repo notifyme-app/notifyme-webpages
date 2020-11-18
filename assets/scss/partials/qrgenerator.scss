@@ -5,41 +5,6 @@
     @media screen and (max-width: $large) {
         padding-bottom: 56px;
     }
-
-    .card {
-        border-radius: 36px;
-        margin: 0;
-    }
-
-    .btn-row {
-        text-align: center;
-
-        a {
-            background-color: $primary;
-            color: white;
-            height: 72px;
-            line-height: 72px;
-            border-radius: 32px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 1.2px;
-            padding: 0 50px;
-            position: relative;
-
-            &:hover,
-            &:active,
-            &:focus {
-                background-color: $primary-dark;
-            }
-
-            .preloader-wrapper {
-                display: none;
-                position: absolute;
-                left: 7px;
-                top: 18px;
-            }
-        }
-    }
 }
 
 #qrgenerator {
@@ -66,69 +31,12 @@
         .card-content {
             padding: 49px 14px 24px 14px;
 
-            .card-title {
-                font-weight: 700;
-                font-size: 28px;
-                text-align: center;
-                line-height: 30px;
-                letter-spacing: 0;
-                margin-bottom: 48px;
-            }
-
             .row {
                 margin: 0;
             }
 
-            .input-field {
-                padding: 0 6px;
-                margin: 0;
-
-                &:not(:first-child) {
-                    margin-top: 34px;
-                }
-
-                input {
-                    background-color: $light-grey;
-                    border-radius: 3px;
-                    border-bottom: none;
-                    margin: 0;
-
-                    color: $grey;
-                    font-family: Inter;
-                    font-weight: 300;
-                    font-size: 16px;
-                    letter-spacing: 0.1px;
-
-                    padding-left: 13px;
-                    width: calc(100% - 13px);
-
-                    &.valid {
-                        box-shadow: none;
-                    }
-                }
-
-                label {
-                    font-family: Inter;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-size: 13px;
-                    color: black;
-                    left: 6px;
-
-                    &.active {
-                        transform: translateY(-20px) scale(1);
-                    }
-                }
-
-                .select-wrapper {
-                    .caret {
-                        z-index: 1;
-                    }
-                    & + label {
-                        top: -32px;
-                    }
-                }
+            .input-field:not(:first-child) {
+                margin-top: 34px;
             }
 
             .btn-row {
@@ -282,7 +190,6 @@
                 }
 
                 &#public-qr-card {
-
                     .information {
                         background-color: $primary-light;
 
@@ -293,7 +200,6 @@
                 }
 
                 &#private-qr-card {
-
                     .information {
                         background-color: $tertiary-light;
 
