@@ -5,7 +5,8 @@ module.exports = env => {
     return {
         entry: {
             qrgenerator: ['core-js/stable', 'regenerator-runtime/runtime', './assets/js/qrgeneratorIndex.js'],
-            uploadpage: ['core-js/stable', 'regenerator-runtime/runtime', "./assets/js/uploadpageIndex.js"]
+            uploadpage: ['core-js/stable', 'regenerator-runtime/runtime', "./assets/js/uploadpageIndex.js"],
+            landingpage: ['core-js/stable', 'regenerator-runtime/runtime', "./assets/js/landingpageIndex.js"]
         },
         output: {
             filename: '[name].min.js',
