@@ -3,7 +3,7 @@
         padding: 0 6px;
         margin: 0;
     
-        input {
+        input, textarea {
             background-color: $light-grey;
             border-radius: 3px;
             border-bottom: none;
@@ -18,9 +18,14 @@
             padding-left: 13px;
             width: calc(100% - 13px);
     
-            &.valid[type=text] {
+            &.valid, &.valid[type=text] {
                 box-shadow: none;
             }
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 140px;
         }
     
         label {
@@ -31,10 +36,7 @@
             font-size: 13px;
             color: black;
             left: 6px;
-    
-            &.active {
-                transform: translateY(-20px) scale(1);
-            }
+            transform: translateY(-20px) scale(1);
         }
     
         .select-wrapper {

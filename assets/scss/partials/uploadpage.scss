@@ -5,6 +5,24 @@
 
         .card-content {
             padding: 46px 14px 24px 14px;
+
+            #note-input-wrapper {
+                margin-top: 30px;
+            }
+
+            .btn-row {
+                margin-top: 24px;
+
+                a {
+                    background-color: $tertiary;
+            
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: $tertiary-dark;
+                    }
+                }
+            }
         }
     }
 }

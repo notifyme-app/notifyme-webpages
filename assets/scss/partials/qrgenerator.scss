@@ -31,10 +31,6 @@
         .card-content {
             padding: 49px 14px 24px 14px;
 
-            .row {
-                margin: 0;
-            }
-
             .input-field:not(:first-child) {
                 margin-top: 34px;
             }
@@ -54,10 +50,6 @@
 
 #qrcodes {
     display: none;
-
-    .row {
-        margin: 0;
-    }
 
     #back-to-generator {
         cursor: pointer;

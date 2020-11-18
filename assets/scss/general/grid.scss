@@ -3,5 +3,9 @@ body {
     
     & > .container {
         max-width: 1200px;
+
+        .row {
+            margin: 0;
+        }
     }
 }
