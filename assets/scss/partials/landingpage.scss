@@ -1,0 +1,46 @@
+#landingpage {
+    text-align: center;
+
+    #landing-logo {
+        margin-top: 166px;
+        width: 160px;
+        height: auto;
+    }
+
+    h1#landing-title {
+        font-size: 64px;
+        line-height: 64px;
+        margin-top: 31px;
+    }
+
+    p#landing-description {
+        max-width: 335px;
+        margin: 13px auto 0 auto;
+
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.38;
+        letter-spacing: 0.4px;
+    }
+
+    #store-icons {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 47px;
+
+        & > div {
+            flex-grow: 1;
+            flex-basis: 270px;
+
+            &:first-child {
+                text-align: right;
+                padding-right: 7px;
+            }
+
+            &:last-child {
+                text-align: left;
+                padding-left: 7px;
+            }
+        }
+    }
+}
