@@ -41,7 +41,8 @@ module.exports = env => {
                 BASE_URL: JSON.stringify(env.BASE_URL),
                 PUBLIC_KEY: JSON.stringify(env.PUBLIC_KEY),
                 UPLOAD_URL: JSON.stringify(env.UPLOAD_URL),
-                POST_URL: JSON.stringify(env.POST_URL)
+                POST_URL: JSON.stringify(env.POST_URL),
+                GIT_INFO: JSON.stringify(env.GIT_INFO)
             }),
         ],
         // optimization: {

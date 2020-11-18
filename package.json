@@ -5,9 +5,9 @@
     "author": "notify-me@ubique.ch",
     "private": true,
     "scripts": {
-        "build:prod:js": "webpack --config webpack.prod.js --env BASE_URL='https://qr.notify-me.ch' --env PUBLIC_KEY='b83ddb8ea6b76efe407d1006a42ed5f450f2c75120ac676aadf08f874745590b' --env UPLOAD_URL='https://upload.notify-me.ch' --env POST_URL='https://app-prod-ws.notify-me.ch/v1/debug/traceKey'",
-        "build:dev:js": "webpack --config webpack.dev.js --env BASE_URL='https://qr-dev.notify-me.ch' --env PUBLIC_KEY='dac7415a963eacc9d9d698f7d820b25f7e7906482ad121fb652eefa08ec29129' --env UPLOAD_URL='https://upload-dev.notify-me.ch' --env POST_URL='https://app-dev-ws.notify-me.ch/v1/debug/traceKey'",
-        "watch:js": "webpack --config webpack.dev.js --watch --env BASE_URL='https://qr-dev.notify-me.ch' --env PUBLIC_KEY='dac7415a963eacc9d9d698f7d820b25f7e7906482ad121fb652eefa08ec29129' --env UPLOAD_URL='https://upload-dev.notify-me.ch' --env POST_URL='https://app-dev-ws.notify-me.ch/v1/debug/traceKey'"
+        "build:prod:js": "webpack --config webpack.prod.js --env BASE_URL='https://qr.notify-me.ch' --env PUBLIC_KEY='b83ddb8ea6b76efe407d1006a42ed5f450f2c75120ac676aadf08f874745590b' --env UPLOAD_URL='https://upload.notify-me.ch' --env POST_URL='https://app-prod-ws.notify-me.ch/v1/debug/traceKey' --env GIT_INFO=\"$(git log -1 --format='%h, %ad' --date=format:'%d.%m.%Y, %H:%M')\"",
+        "build:dev:js": "webpack --config webpack.dev.js --env BASE_URL='https://qr-dev.notify-me.ch' --env PUBLIC_KEY='dac7415a963eacc9d9d698f7d820b25f7e7906482ad121fb652eefa08ec29129' --env UPLOAD_URL='https://upload-dev.notify-me.ch' --env POST_URL='https://app-dev-ws.notify-me.ch/v1/debug/traceKey' --env GIT_INFO=\"$(git log -1 --format='%h, %ad' --date=format:'%d.%m.%Y, %H:%M')\"",
+        "watch:js": "webpack --config webpack.dev.js --watch --env BASE_URL='https://qr-dev.notify-me.ch' --env PUBLIC_KEY='dac7415a963eacc9d9d698f7d820b25f7e7906482ad121fb652eefa08ec29129' --env UPLOAD_URL='https://upload-dev.notify-me.ch' --env POST_URL='https://app-dev-ws.notify-me.ch/v1/debug/traceKey' --env GIT_INFO=\"$(git log -1 --format='%h, %ad' --date=format:'%d.%m.%Y, %H:%M')\""
     },
     "dependencies": {
         "flatpickr": "^4.6.6",

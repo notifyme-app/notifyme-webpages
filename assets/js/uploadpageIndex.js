@@ -6,9 +6,10 @@ import 'materialize-css/js/buttons.js';
 import 'materialize-css/js/waves.js';
 import 'materialize-css/js/toasts.js';
 import { disableButton, enableButton, ready } from './utils/utils';
-
 require("flatpickr/dist/flatpickr.min.css");
 import flatpickr from "flatpickr";
+
+ready(() => console.log(`Commit: ${GIT_INFO}`));
 
 const uploadData = async (button) => {
     if (button.classList.contains("disabled")) return;

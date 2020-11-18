@@ -1,5 +1,7 @@
 import { ready } from "./utils/utils";
 
+ready(() => console.log(`Commit: ${GIT_INFO}`));
+
 ready(() => {
     if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
         if(window.storeLinks.playStore === "https://example.com") {

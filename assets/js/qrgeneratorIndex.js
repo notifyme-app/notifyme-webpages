@@ -9,6 +9,8 @@ import 'materialize-css/js/waves.js';
 import { initializeQrGenerator } from "./qrgenerator/qrgenerator";
 import { ready } from "./utils/utils";
 
+ready(() => console.log(`Commit: ${GIT_INFO}`));
+
 ready(() => {
     const elems = document.querySelectorAll('select');
     M.FormSelect.init(elems);
