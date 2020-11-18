@@ -79,6 +79,14 @@
             letter-spacing: 1.2px;
             padding: 0 50px;
             position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 100%;
+
+            @media screen and (max-width: $mobile) {
+                padding: 0 33px;
+            }
     
             &:hover,
             &:active,

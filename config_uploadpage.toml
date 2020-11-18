@@ -1,2 +1,5 @@
+title = "NotifyMe - Upload Private Code"
+
 [params]
+  description = "A scanned Private NotifyMe QR-Code can be uploaded on this page"
   PageVariant = "uploadpage"
