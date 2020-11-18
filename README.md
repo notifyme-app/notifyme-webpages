@@ -11,7 +11,12 @@ A dev server can be started with `hugo --config config.toml,config_qrgenerator s
 
 ### Build Site
 
-The site can be build with the command `hugo --config config.toml,config_qrgenerator`. The static files are placed in the `public/` folder.
+You can build two different Webpages from this code. They are defined in their respective config files:
+
+* QR-Generator `config_qrgenerator.toml`
+* QR Upload Page `config_uploadpage.toml`
+
+The sites can be built with the command `hugo --config config.toml,${site_config}`. The build files are placed in the `public/` folder.
 
 ### Getting the translations
 
