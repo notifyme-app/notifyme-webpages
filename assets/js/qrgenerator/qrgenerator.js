@@ -1,16 +1,8 @@
 import generateProtoBufs from './generateProtoBufs'
 import { generateDataURL } from './generateQrCode'
 import { PDFDocument } from 'pdf-lib'
+import { disableButton, enableButton } from '../utils/utils'
 
-const disableButton = (button) => {
-    button.classList.add("disabled");
-    button.getElementsByClassName("preloader-wrapper")[0].style.display = "block";
-}
-
-const enableButton = (button) => {
-    button.classList.remove("disabled");
-    button.getElementsByClassName("preloader-wrapper")[0].style.display = "none";
-}
 
 const showFormData = (data) => {
     document.getElementById('qr-title').innerHTML = data.title;

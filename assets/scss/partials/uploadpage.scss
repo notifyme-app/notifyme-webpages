@@ -6,6 +6,10 @@
         .card-content {
             padding: 46px 14px 24px 14px;
 
+            input.invalid {
+                border-bottom: 1px solid $tertiary;
+            }
+
             #note-input-wrapper {
                 margin-top: 30px;
             }

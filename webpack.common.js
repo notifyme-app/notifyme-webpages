@@ -22,6 +22,13 @@ module.exports = env => {
                             presets: ["@babel/preset-env"]
                         }
                     }
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader'
+                    ]
                 }
             ]
         },
@@ -33,6 +40,7 @@ module.exports = env => {
                 BASE_URL: JSON.stringify(env.BASE_URL),
                 PUBLIC_KEY: JSON.stringify(env.PUBLIC_KEY),
                 UPLOAD_URL: JSON.stringify(env.UPLOAD_URL),
+                POST_URL: JSON.stringify(env.POST_URL)
             }),
         ],
         // optimization: {
@@ -47,11 +55,11 @@ module.exports = env => {
         //     }
         // },
         resolve: {
-          fallback: {
-            path: require.resolve("path-browserify"),
-            crypto: require.resolve("crypto-browserify"),
-            stream: require.resolve("stream-browserify")
-          },
+            fallback: {
+                path: require.resolve("path-browserify"),
+                crypto: require.resolve("crypto-browserify"),
+                stream: require.resolve("stream-browserify")
+            },
         }
     }
 }

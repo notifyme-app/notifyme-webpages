@@ -5,22 +5,23 @@
             <form id="upload-form">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="from" id="from" type="datetime-local" class="validate" required>
-                        <label for="from">{{ T "upload_period_label" }}</label>
-                        <span class="helper-text" data-error="{{ T "upload_period_from_label" }}* {{ T "generator_missing_input" }}">{{ T "upload_period_from_label" }}</span>
+                        <input name="from" id="from" type="text" placeholder="{{ T "upload_period_from_label" }}">
+                        <label for="from">{{ T "upload_period_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
                     </div>
                     <div class="input-field col s12">
-                        <input name="to" id="to" type="datetime-local" class="validate" required>
-                        <span class="helper-text" data-error="{{ T "upload_period_to_label" }}* {{ T "generator_missing_input" }}">{{ T "upload_period_to_label" }}</span>
+                        <input name="to" id="to" type="text" placeholder="{{ T "upload_period_to_label" }}">  
+                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
                     </div>
                     <div id="note-input-wrapper" class="input-field col s12">
-                        <textarea placeholder="{{ T "upload_note_placeholder" }}" name="note" id="note" class="validate materialize-textarea"></textarea>
+                        <textarea placeholder="{{ T "upload_note_placeholder" }}" name="note" id="note"
+                            class="validate materialize-textarea"></textarea>
                         <label for="note">{{ T "upload_note_label" }}</label>
                     </div>
                 </div>
             </form>
             <div class="btn-row row">
-                <a id="generate-qr-btn" class="waves-effect waves-light btn">
+                <a id="upload-btn" class="waves-effect waves-light btn">
                     {{ T "upload_upload_button" }}
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer">
