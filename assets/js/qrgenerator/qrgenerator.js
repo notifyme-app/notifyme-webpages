@@ -16,8 +16,8 @@ const showFormData = (data) => {
     }
 }
 
-const generatePDF = async (pdfButton, publicMessage, privateMessage) => {
-    const response = await fetch('/pdfs/template.pdf');
+const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {
+    const response = await fetch(`/pdfs/template.${window.currentLanguage.shortcode}.pdf`);
     const template = await response.arrayBuffer();
 
     const pdf = await PDFDocument.load(template);
@@ -91,7 +91,7 @@ const generateKeys = async (qrButton) => {
     document.getElementById('qrgenerator').style.display = "none";
     document.getElementById('qrcodes').style.display = "block";
 
-    generatePDF(pdfButton, publicMessage, privateMessage);
+    generatePDF(pdfButton, publicMessage, privateMessage, data);
 }
 
 const backToGenerator = () => {
