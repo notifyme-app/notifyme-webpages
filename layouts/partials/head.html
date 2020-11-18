@@ -31,10 +31,12 @@
 
     <script>
         window.currentLanguage = {
-            shortcode: "{{ .Site.Language.Lang }}",
-            uploadSuccessMessage: "{{ T "upload_success_message" }}",
-            uploadErrorMessage: "{{ T "upload_error_message" }}",
-            uploadMissingPayloadMessage: "{{ T "upload_missing_payload" }}"
+            shortcode: '{{ .Site.Language.Lang }}',
+            uploadSuccessMessage: '{{ T "upload_success_message" }}',
+            uploadErrorMessage: '{{ T "upload_error_message" }}',
+            uploadMissingPayloadMessage: '{{ T "upload_missing_payload" }}',
+            appStoreLink: '{{ T "landing_app_store_link" }}',
+            playStoreLink: '{{ T "landing_play_store_link" }}'
         }
     </script>
 
