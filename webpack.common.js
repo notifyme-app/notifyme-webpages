@@ -4,7 +4,8 @@ const webpack = require('webpack');
 module.exports = env => {
     return {
         entry: {
-            qrgenerator: ["babel-polyfill", './assets/js/qrgeneratorIndex.js'],
+            qrgenerator: './assets/js/qrgeneratorIndex.js',
+            uploadpage: "./assets/js/uploadpageIndex.js"
         },
         output: {
             filename: '[name].min.js',
