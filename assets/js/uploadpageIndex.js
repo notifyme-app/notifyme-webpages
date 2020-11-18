@@ -47,7 +47,7 @@ const uploadData = async (button) => {
     postFormData.append('ctx', payload);
     postFormData.append('startTime', data.from);
     postFormData.append('endTime', data.to);
-    postFormData.append('note', data.note);
+    postFormData.append('message', data.note);
 
     const response = await fetch(`${POST_URL}`, {
         method: "POST",
