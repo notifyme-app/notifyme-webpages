@@ -4,8 +4,8 @@ const webpack = require('webpack');
 module.exports = env => {
     return {
         entry: {
-            qrgenerator: './assets/js/qrgeneratorIndex.js',
-            uploadpage: "./assets/js/uploadpageIndex.js"
+            qrgenerator: ['core-js/stable', 'regenerator-runtime/runtime', './assets/js/qrgeneratorIndex.js'],
+            uploadpage: ['core-js/stable', 'regenerator-runtime/runtime', "./assets/js/uploadpageIndex.js"]
         },
         output: {
             filename: '[name].min.js',

@@ -8,7 +8,7 @@ import 'materialize-css/js/buttons.js';
 import 'materialize-css/js/waves.js';
 import { initializeQrGenerator } from "./qrgenerator/qrgenerator";
 
-let ready = (fn) => {
+const ready = (fn) => {
     if (document.readyState != 'loading') {
         fn();
     } else {
