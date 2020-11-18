@@ -10,6 +10,7 @@
         "watch:js": "webpack --config webpack.dev.js --watch --env BASE_URL='https://qr-dev.notify-me.ch' --env PUBLIC_KEY='dac7415a963eacc9d9d698f7d820b25f7e7906482ad121fb652eefa08ec29129' --env UPLOAD_URL='https://upload-dev.notify-me.ch' --env POST_URL='https://app-dev-ws.notify-me.ch/v1/debug/traceKey' --env GIT_INFO=\"$(git log -1 --format='%h, %ad' --date=format:'%d.%m.%Y, %H:%M')\""
     },
     "dependencies": {
+        "@pdf-lib/fontkit": "^1.1.0",
         "flatpickr": "^4.6.6",
         "libsodium-sumo": "^0.7.8",
         "libsodium-wrappers-sumo": "^0.7.8",
@@ -18,7 +19,8 @@
         "pdf-lib": "^1.12.0",
         "protobufjs": "^6.10.2",
         "qrcode": "^1.4.4",
-        "stream-browserify": "^3.0.0"
+        "stream-browserify": "^3.0.0",
+        "strftime": "^0.10.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",

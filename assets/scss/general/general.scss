@@ -36,6 +36,9 @@
             font-size: 13px;
             color: black;
             left: 6px;
+        }
+
+        input + label, textarea + label {
             transform: translateY(-20px) scale(1);
         }
     

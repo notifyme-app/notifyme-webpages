@@ -853,6 +853,13 @@
   dependencies:
     chokidar "2.1.8"
 
+"@pdf-lib/fontkit@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@pdf-lib/fontkit/-/fontkit-1.1.0.tgz#fbef250fece95c754a05a63928a1fd3ac4e73e78"
+  integrity sha512-fauG8mgiOIuPrySuvqxvly7w/3RsBmsBuy/AmzkToIR9dB0CUoEN7gffGte/26aFrZz/lRp1715CbiuZ0lxf2Q==
+  dependencies:
+    pako "^1.0.6"
+
 "@pdf-lib/standard-fonts@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pdf-lib/standard-fonts/-/standard-fonts-1.0.0.tgz#8ba691c4421f71662ed07c9a0294b44528af2d7f"
@@ -4634,6 +4641,11 @@ stream-shift@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
+
+strftime@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/strftime/-/strftime-0.10.0.tgz#b3f0fa419295202a5a289f6d6be9f4909a617193"
+  integrity sha1-s/D6QZKVICpaKJ9ta+n0kJphcZM=
 
 string-width@^3.0.0, string-width@^3.1.0:
   version "3.1.0"

@@ -1,7 +1,9 @@
 import generateProtoBufs from './generateProtoBufs'
 import { generateDataURL } from './generateQrCode'
-import { PDFDocument } from 'pdf-lib'
+import { PDFDocument, rgb } from 'pdf-lib'
+import fontkit from '@pdf-lib/fontkit'
 import { disableButton, enableButton } from '../utils/utils'
+import strftime from 'strftime'
 
 
 const showFormData = (data) => {
@@ -21,25 +23,89 @@ const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {
     const template = await response.arrayBuffer();
 
     const pdf = await PDFDocument.load(template);
+    pdf.registerFontkit(fontkit);
 
-    const publicDataURL = await generateDataURL(publicMessage, { width: 220, color: { dark: "#413f8d" } });
+    const publicDataURL = await generateDataURL(publicMessage, { width: 192, color: { dark: "#413f8d" } });
     const publicPng = await pdf.embedPng(publicDataURL);
     const publicPage = pdf.getPage(0);
     publicPage.drawImage(publicPng, {
         x: publicPage.getWidth() / 2 - publicPng.width / 2,
-        y: publicPage.getHeight() / 2 - 50,
+        y: 379,
         width: publicPng.width,
         height: publicPng.height,
     });
 
-    const privateDataURL = await generateDataURL(privateMessage, { width: 150, color: { dark: "#f34e70" } });
+    const privateDataURL = await generateDataURL(privateMessage, { width: 158, color: { dark: "#f34e70" } });
     const privatePng = await pdf.embedPng(privateDataURL);
     const privatePage = pdf.getPage(1);
     privatePage.drawImage(privatePng, {
         x: privatePage.getWidth() / 2 - privatePng.width / 2,
-        y: privatePage.getHeight() / 2 + 220,
+        y: 627,
         width: privatePng.width,
         height: privatePng.height,
+    });
+
+    const fontLightResponse = await fetch(`/fonts/Inter-Light.otf`);
+    const fontBoldResponse = await fetch(`/fonts/Inter-Bold.otf`);
+    const fontRegularResponse = await fetch(`/fonts/Inter-Regular.otf`);
+
+    const interLightBuffer = await fontLightResponse.arrayBuffer();
+    const interBoldBuffer = await fontBoldResponse.arrayBuffer();
+    const interRegularBuffer = await fontRegularResponse.arrayBuffer();
+
+    const interLight = await pdf.embedFont(interLightBuffer);
+    const interBold = await pdf.embedFont(interBoldBuffer);
+    const interRegular = await pdf.embedFont(interRegularBuffer);
+
+    const publicTitleSize = 24.3;
+    const publicSubtitleSize = 13.9;
+    const publicTitleWidth = interBold.widthOfTextAtSize(data.title, publicTitleSize);
+    const publicSubtitleWidth = interLight.widthOfTextAtSize(data.subtitle, publicSubtitleSize);
+
+    publicPage.drawText(data.title, {
+        x: publicPage.getWidth() / 2 - publicTitleWidth / 2,
+        y: 279,
+        size: publicTitleSize,
+        font: interBold,
+        color: rgb(0, 0, 0)
+    });
+    publicPage.drawText(data.subtitle, {
+        x: publicPage.getWidth() / 2 - publicSubtitleWidth / 2,
+        y: 255.9,
+        size: publicSubtitleSize,
+        font: interLight,
+        color: rgb(0, 0, 0)
+    });
+
+    const privateTitleSize = 19.5;
+    const privateSubtitleSize = 11.1;
+    const privateTitleWidth = interBold.widthOfTextAtSize(data.title, privateTitleSize);
+    const privateSubtitleWidth = interLight.widthOfTextAtSize(data.subtitle, privateSubtitleSize);
+
+    privatePage.drawText(data.title, {
+        x: privatePage.getWidth() / 2 - privateTitleWidth / 2,
+        y: 558,
+        size: privateTitleSize,
+        font: interBold,
+        color: rgb(0, 0, 0)
+    });
+    privatePage.drawText(data.subtitle, {
+        x: privatePage.getWidth() / 2 - privateSubtitleWidth / 2,
+        y: 539,
+        size: privateSubtitleSize,
+        font: interLight,
+        color: rgb(0, 0, 0)
+    });
+
+    const date = strftime('Created on %d.%m.%Y at %H:%M');
+    const dateSize = 12
+    const dateWidth = interRegular.widthOfTextAtSize(date, dateSize);
+    privatePage.drawText(date, {
+        x: privatePage.getWidth() / 2 - dateWidth / 2,
+        y: 290,
+        size: dateSize,
+        font: interRegular,
+        color: rgb(0, 0, 0)
     });
 
     const pdfBytes = await pdf.save();
