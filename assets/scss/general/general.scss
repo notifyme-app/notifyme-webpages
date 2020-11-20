@@ -86,6 +86,7 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             max-width: 100%;
+            box-shadow: none;
 
             @media screen and (max-width: $mobile) {
                 padding: 0 33px;
