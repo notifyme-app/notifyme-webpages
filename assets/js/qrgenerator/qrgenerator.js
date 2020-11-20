@@ -7,15 +7,11 @@ import strftime from 'strftime'
 
 
 const showFormData = (data) => {
+    document.getElementById('qr-category').src = `images/illus_category_${data.category}.svg`;
     document.getElementById('qr-title').innerHTML = data.title;
-    document.getElementById('qr-subtitle').innerHTML = data.subtitle;
-    const addition = document.getElementById('qr-addition');
-    if (!!data.addition) {
-        addition.innerHTML = data.addition;
-        addition.style.display = "block";
-    } else {
-        addition.style.display = "none";
-    }
+    let subtitle = data.subtitle;
+    if(!!data.addition) subtitle += `, ${data.addition}`;
+    document.getElementById('qr-subtitle').innerHTML = subtitle;
 }
 
 const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {

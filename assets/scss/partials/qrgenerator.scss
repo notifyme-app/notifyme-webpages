@@ -78,29 +78,37 @@
     }
 
     #qr-information {
-        margin-top: 31px;
+        margin-top: 10px;
         text-align: center;
+
+        #qr-category {
+            width: 42px;
+            height: auto;
+        }
 
         #qr-title {
             font-weight: 700;
             font-size: 28px;
             line-height: 30px;
             letter-spacing: 0;
-            margin-bottom: 5px;
+            margin-top: 15px;
         }
 
-        #qr-subtitle,
-        #qr-addition {
+        #qr-subtitle {
             font-weight: 300;
             font-size: 16px;
             line-height: 22px;
             letter-spacing: 0.4px;
-            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: $mobile) {
+            margin-top: -12px;
         }
     }
 
     .qr-card-wrapper {
-        margin-top: 28px;
+        margin-top: 33px;
         display: flex;
         flex-wrap: wrap;
         padding: 0 8.3333333%;
