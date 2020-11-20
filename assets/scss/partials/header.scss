@@ -2,21 +2,27 @@ header {
     display: flex;
     margin-top: 40px;
 
-    img {
-        width: 42px;
-        height: 42px;
+    & > a {
+        display: flex;
 
-        margin-right: 14px;
-    }
-
-    h1 {
-        margin: 0;
-        line-height: 42px;
-        flex-grow: 1;
+        img {
+            width: 42px;
+            height: 42px;
+    
+            margin-right: 14px;
+        }
+    
+        h1 {
+            margin: 0;
+            line-height: 42px;
+        }
     }
 
     .language-selection {
         margin-top: 13px;
+        flex-grow: 1;
+        text-align: right;
+        
         & > * {
             text-transform: uppercase;
             line-height: 16px;
