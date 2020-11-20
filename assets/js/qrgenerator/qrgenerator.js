@@ -97,7 +97,7 @@ const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {
         color: rgb(0, 0, 0)
     });
 
-    const date = strftime('Created on %d.%m.%Y at %H:%M');
+    const date = strftime(window.currentLanguage.pdfCreatedOnFormat);
     const dateSize = 12
     const dateWidth = interRegular.widthOfTextAtSize(date, dateSize);
     privatePage.drawText(date, {
