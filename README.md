@@ -15,6 +15,7 @@ You can build two different Webpages from this code. They are defined in their r
 
 * QR-Generator `config_qrgenerator.toml`
 * QR Upload Page `config_uploadpage.toml`
+* Landing Page `config_landingpage.toml`
 
 The sites can be built with the command `hugo --config config.toml,${site_config}`. The build files are placed in the `public/` folder.
 
