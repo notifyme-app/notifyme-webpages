@@ -14,9 +14,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   [languages.fr]
     weight = 2
     languageName = "Français"
-  [languages.it]
-    weight = 2
-    languageName = "Italiano"
+  # [languages.it]
+  #   weight = 2
+  #   languageName = "Italiano"
   [languages.en]
     weight = 4
     languageName = "English"

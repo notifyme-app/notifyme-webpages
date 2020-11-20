@@ -4,10 +4,17 @@ export default {
             nested: {
                 VenueType: {
                     values: {
-                        "OTHER": 0,
-                        "MEETING_ROOM": 1,
-                        "CAFETERIA": 2,
-                        "PRIVATE_PARTY": 3
+                        OTHER: 0,
+                        MEETING_ROOM: 1,
+                        CAFETERIA: 2,
+                        PRIVATE_EVENT: 3,
+                        CANTEEN: 4,
+                        LIBRARY: 5,
+                        LECTURE_ROOM: 6,
+                        SHOP: 7,
+                        GYM: 8,
+                        KITCHEN_AREA: 9,
+                        OFFICE_SPACE: 10,
                     }
                 },
                 QRCodeContent: {

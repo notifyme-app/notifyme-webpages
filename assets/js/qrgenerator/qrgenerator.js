@@ -25,7 +25,7 @@ const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {
     const pdf = await PDFDocument.load(template);
     pdf.registerFontkit(fontkit);
 
-    const publicDataURL = await generateDataURL(publicMessage, { width: 192, color: { dark: "#413f8d" } });
+    const publicDataURL = await generateDataURL(`${BASE_URL}#${publicMessage}`, { width: 192, color: { dark: "#413f8d" } });
     const publicPng = await pdf.embedPng(publicDataURL);
     const publicPage = pdf.getPage(0);
     publicPage.drawImage(publicPng, {
@@ -35,7 +35,7 @@ const generatePDF = async (pdfButton, publicMessage, privateMessage, data) => {
         height: publicPng.height,
     });
 
-    const privateDataURL = await generateDataURL(privateMessage, { width: 158, color: { dark: "#f34e70" } });
+    const privateDataURL = await generateDataURL(`${UPLOAD_URL}#${privateMessage}`, { width: 158, color: { dark: "#f34e70" } });
     const privatePng = await pdf.embedPng(privateDataURL);
     const privatePage = pdf.getPage(1);
     privatePage.drawImage(privatePng, {
