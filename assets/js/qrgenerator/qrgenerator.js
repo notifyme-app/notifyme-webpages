@@ -97,8 +97,11 @@ const checkValidFrom = (input) => {
     var earliestFrom = new Date(now.getTime());
     var latestFrom = new Date(now.getTime());
     latestFrom.setDate(latestFrom.getDate() + createBeforeMaxDays);
-    if (!(validFrom > earliestFrom && validFrom < latestFrom)) {
-        updateErrorMsg("validFromHelperText", "errorRange");
+    if (validFrom < earliestFrom) {
+        updateErrorMsg("validFromHelperText", "errorInvalid");
+        input._flatpickr.element.parentNode.children[1].classList.add("invalid");
+    } else if (validFrom > latestFrom) {
+        updateErrorMsg("validFromHelperText", "errorFromOverflow");
         input._flatpickr.element.parentNode.children[1].classList.add("invalid");
     } else {
         updateErrorMsg("validFromHelperText", "errorMissing");
@@ -112,8 +115,11 @@ const checkValidTo = (input, validFromInput) => {
             const maxDurationInH = 24;
             var validTo = Date.parse(input.value.trim().replace(" ", "T"));
             var validFrom = Date.parse(validFromInput.value.trim().replace(" ", "T"));
-            if ((validTo < validFrom) || ((validTo - validFrom) > maxDurationInH * 60 * 60 * 1000)) {
-                updateErrorMsg("validToHelperText", "errorRange");
+            if (validTo < validFrom) {
+                updateErrorMsg("validToHelperText", "errorInvalid");
+                input._flatpickr.element.parentNode.children[1].classList.add("invalid");
+            } else if ((validTo - validFrom) > (maxDurationInH * 60 * 60 * 1000)) {
+                updateErrorMsg("validToHelperText", "errorDurationOverflow");
                 input._flatpickr.element.parentNode.children[1].classList.add("invalid");
             } else {
                 updateErrorMsg("validToHelperText", "errorMissing");

@@ -40,13 +40,13 @@
                         <label for="addition">{{ T "generator_addition_label" }}</label>
                     </div>
                     <div class="input-field col s12">
-                        <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "upload_period_from_label" }}" >
-                        <label for="validFrom">{{ T "upload_period_label" }}*</label>
-                        <span id="validFromHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-range="out of range"></span>
+                        <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "qr_validity_period_from_label" }}" >
+                        <label for="validFrom">{{ T "qr_validity_period_label" }}*</label>
+                        <span id="validFromHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-invalid="{{ T "qr_validity_period_invalid_time" }}" data-error-from-overflow="{{ T "qr_validity_period_earliest_from_error" }}"></span>
                     </div>
                     <div class="input-field col s12 no-label">
-                        <input name="validTo" id="validTo" type="text" placeholder="{{ T "upload_period_to_label" }}" >
-                        <span id="validToHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-range="out of range"></span>
+                        <input name="validTo" id="validTo" type="text" placeholder="{{ T "qr_validity_period_to_label" }}" >
+                        <span id="validToHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-invalid="{{ T "qr_validity_period_invalid_time" }}" data-error-duration-overflow="{{ T "max_qr_validity_period_error" }}"></span>
                     </div>
                 </div>
             </form>
