@@ -10,7 +10,7 @@ const QRCodeWrapper = rootQr.lookupType("qrpackage.QRCodeWrapper");
 const rootSeed = protobuf.Root.fromJSON(seedMessage);
 const SeedMessage = rootSeed.lookupType("seedpackage.SeedMessage");
 
-const generateProtoBufs = async (name, location, room, venueType, public_key) => {
+const generateProtoBufs = async (name, location, room, venueType, public_key, validFrom, validTo) => {
     await _sodium.ready;
     const sodium = _sodium;
 
@@ -38,6 +38,8 @@ const generateProtoBufs = async (name, location, room, venueType, public_key) =>
         room: room,
         venueType: venueType,
         notificationKey: notificationKey,
+        validFrom: validFrom,
+        validTo: validTo,
     });
 
     const qrCodeContentProtoBufBytes = QRCodeContent.encode(qrCodeContent).finish();

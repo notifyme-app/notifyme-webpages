@@ -6,7 +6,7 @@
             <span class="card-title">{{ T "generator_title" }}</span>
             <form id="qr-form">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 optional">
                         <select name="category" id="category">
                             <option value="0">{{ T "generator_category_other" }}</option>
                             <option value="1">{{ T "generator_category_meeting_room" }}</option>
@@ -24,20 +24,29 @@
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="{{ T "generator_title_placeholder" }}" name="title" id="title" type="text"
-                            class="validate" required>
+                            class="validate" required maxlength="50">
                         <label for="title">{{ T "generator_title_label" }}*</label>
                         <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="{{ T "generator_subtitle_placeholder" }}" name="subtitle" id="subtitle"
-                            type="text" class="validate" required>
+                            type="text" class="validate" required maxlength="50">
                         <label for="subtitle">{{ T "generator_subtitle_label" }}*</label>
                         <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 optional">
                         <input placeholder="{{ T "generator_addition_placeholder" }}" name="addition" id="addition" type="text"
-                            class="validate">
+                            class="validate" maxlength="50">
                         <label for="addition">{{ T "generator_addition_label" }}</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "upload_period_from_label" }}" >
+                        <label for="validFrom">{{ T "upload_period_label" }}*</label>
+                        <span id="validFromHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-range="out of range"></span>
+                    </div>
+                    <div class="input-field col s12 no-label">
+                        <input name="validTo" id="validTo" type="text" placeholder="{{ T "upload_period_to_label" }}" >
+                        <span id="validToHelperText" class="helper-text" data-error-missing="{{ T "generator_missing_input" }}" data-error-range="out of range"></span>
                     </div>
                 </div>
             </form>

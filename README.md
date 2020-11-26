@@ -1,6 +1,6 @@
-# README 
+# README
 
-* This project requires Hugo 0.78.2 which can be installed from [here](https://gohugo.io/getting-started/installing). **Carefull** the extended version is needed for SCSS preprocessing.
+* This project requires Hugo 0.78.2 which can be installed from [here](https://gohugo.io/getting-started/installing). **Careful** the extended version is needed for SCSS preprocessing.
 * Download `yarn` and run `yarn install` to install all dependencies.
 * Run `yarn build:prod:js` to precompile `assets/js/index.js`. Run `yarn build:dev:js` to include a source map and not minify the javascript.
 * Run `yarn watch:js` to precompile `assets/js/index.js` and watch for changes.

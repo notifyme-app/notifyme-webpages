@@ -31,8 +31,12 @@
         .card-content {
             padding: 49px 14px 24px 14px;
 
-            .input-field:not(:first-child) {
+            .input-field:not(:first-child):not(.no-label) {
                 margin-top: 34px;
+            }
+
+            .input-field.optional:not(:last-child) {
+                margin-bottom: 18px;
             }
 
             .btn-row {

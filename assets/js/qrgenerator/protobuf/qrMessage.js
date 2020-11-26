@@ -53,6 +53,16 @@ export default {
                             rule: "required",
                             type: "bytes",
                             id: 7
+                        },
+                        validFrom: {
+                            rule: "optional",
+                            type: "uint64",
+                            id: 8
+                        },
+                        validTo: {
+                            rule: "optional",
+                            type: "uint64",
+                            id: 9
                         }
                     }
                 },
@@ -78,4 +88,4 @@ export default {
             }
         }
     }
-}
+};
