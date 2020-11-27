@@ -19,6 +19,3 @@ node_modules/
 venv/
 *.pyc
 secrets.py
-
-# translations
-i18n/

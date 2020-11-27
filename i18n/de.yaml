@@ -1,0 +1,112 @@
+web_generator_title: 
+    other: "Demo QR-Codes erstellen"
+web_generator_category_label: 
+    other: "Kategorie"
+web_generator_category_other: 
+    other: "Andere"
+web_generator_category_meeting_room: 
+    other: "Sitzungsraum"
+web_generator_category_cafeteria: 
+    other: "Kafeteria"
+web_generator_category_private_event: 
+    other: "Privater Event"
+web_generator_title_label: 
+    other: "Titel"
+web_generator_title_placeholder: 
+    other: "z.B. Raum- oder Eventname"
+web_generator_subtitle_label: 
+    other: "Untertitel"
+web_generator_subtitle_placeholder: 
+    other: "z.B. Organisation oder Veranstalter"
+web_generator_addition_label: 
+    other: "Zusatz"
+web_generator_addition_placeholder: 
+    other: "z.B. Gebäude oder Ort"
+web_generator_generation_button_label: 
+    other: "QR-Codes erstellen"
+web_generator_back: 
+    other: "Zurück"
+web_generator_public_bulletpoint_1: 
+    other: "Mit diesem QR-Code können Besucher vor Ort einchecken."
+web_generator_public_bulletpoint_2: 
+    other: "Der Code kann mit der NotifyMe App gescannt werden."
+web_generator_public_bulletpoint_3: 
+    other: "Die Check-Ins werden nicht registriert und es werden keine privaten Daten der Besucher erfasst."
+web_generator_private_bulletpoint_1: 
+    other: "Mit diesem QR-Code können Besucher bei einem Vorfall informiert werden."
+web_generator_private_bulletpoint_2: 
+    other: "Der Code kann mit einem beliebigen QR-Code Leser gescannt werden."
+web_generator_private_bulletpoint_3: 
+    other: "Es wird nur ein Entschlüsselungs-Schlüssel veröffentlicht. Keine Angaben zum Veranstalter."
+web_generator_pdf_button: 
+    other: "PDF herunterladen"
+web_generator_public_qr_title: 
+    other: "<span>Public</span>\\\nQR-Code"
+web_generator_private_qr_title: 
+    other: "<span>Private</span>\\\nQR-Code"
+web_generator_missing_input: 
+    other: "Bitte Pflichtfeld ausfüllen"
+web_upload_title: 
+    other: "Besucher informieren"
+web_upload_period_label: 
+    other: "Betroffener Zeitraum"
+web_upload_period_from_label: 
+    other: "Von"
+web_upload_period_to_label: 
+    other: "Bis"
+web_upload_note_label: 
+    other: "Hinweis an die Besucher"
+web_upload_note_placeholder: 
+    other: "Was sollen die Besucher tun?"
+web_upload_upload_button: 
+    other: "Jetzt informieren"
+web_upload_success_message: 
+    other: "Upload erfolgreich"
+web_upload_error_message: 
+    other: "Upload fehlgeschlagen"
+web_upload_missing_payload: 
+    other: "Kein Private Key gefunden. Bitte einen gültigen QR-Code scannen."
+web_landing_description: 
+    other: "Dezentral gespeicherte Check-Ins für Meetings & Events"
+web_landing_app_store_link: 
+    other: "https://itunes.apple.com/app/id1537859001"
+web_landing_play_store_link: 
+    other: "https://example.com"
+web_generator_pdf_created_on_format: 
+    other: "Erstellt am %d.%m.%Y um %H:%M Uhr\n"
+web_generator_category_canteen: 
+    other: "Kantine"
+web_generator_category_library: 
+    other: "Bibliothek"
+web_generator_category_lecture_room: 
+    other: "Vorlesungssaal"
+web_generator_category_shop: 
+    other: "Laden"
+web_generator_category_gym: 
+    other: "Fitnesscenter"
+web_generator_category_kitchen_area: 
+    other: "Küchenbereich"
+web_generator_category_office_space: 
+    other: "Büroräume"
+web_qr_validity_period_label: 
+    other: "Gültigkeit (max. 24h)"
+web_qr_validity_period_from_label: 
+    other: "Von"
+web_qr_validity_period_to_label: 
+    other: "Bis"
+web_max_qr_validity_period_error: 
+    other: "Die maximale Gültigkeitsdauer liegt bei %d Stunden"
+web_qr_validity_period_earliest_from_error: 
+    other: "QR-Codes können höchstens %d Tage im voraus erstellt werden"
+web_qr_validity_period_invalid_time: 
+    other: "Ungültiger Zeitpunkt"
+web_generator_date_label: 
+    other: "Gültig am"
+web_generator_date_placeholder: 
+    other: "Datum wählen"
+web_generator_validity_information: 
+    other: "Die Demo QR-Codes sind jeweils nur an einem Tag gültig"
+web_generator_code_validity_message: 
+    other: "Dieser Demo QR-Code ist gültig am **%d.%m.%Y**"
+web_pdf_code_validity_message: 
+    other: "Dieser Demo QR-Code ist gültig am\\\n%d.%m.%Y"

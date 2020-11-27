@@ -1,0 +1,94 @@
+web_generator_title: 
+    other: "Créer code QR démo"
+web_generator_category_label: 
+    other: "Catégorie"
+web_generator_category_other: 
+    other: "Autre"
+web_generator_category_meeting_room: 
+    other: "Salle de réunion"
+web_generator_category_cafeteria: 
+    other: "Cafétéria"
+web_generator_category_private_event: 
+    other: "Soirée privée"
+web_generator_title_label: 
+    other: "Titre"
+web_generator_title_placeholder: 
+    other: "p. ex. Nom de pièce ou d'événement"
+web_generator_subtitle_label: 
+    other: "Sous-titre"
+web_generator_subtitle_placeholder: 
+    other: "p. ex. Organisation ou organisateur·trice"
+web_generator_addition_label: 
+    other: "Additif"
+web_generator_addition_placeholder: 
+    other: "p. ex. Bâtiment ou lieu"
+web_generator_generation_button_label: 
+    other: "Générer un code QR"
+web_generator_back: 
+    other: "Retour"
+web_generator_public_bulletpoint_1: 
+    other: "Avec ce code QR les visiteurs peuvent s'enregistrer sur place."
+web_generator_public_bulletpoint_2: 
+    other: "Le code peut être scanné avec NotifyMe"
+web_generator_public_bulletpoint_3: 
+    other: "Aucune données personnelles ne sont saisies. Les enregistrements ne sont pas visibles pour les propriétaires de lieux."
+web_generator_private_bulletpoint_1: 
+    other: "Ce code QR informe les visiteurs en cas incident."
+web_generator_private_bulletpoint_2: 
+    other: "Le code peut être scanné avec n'importe quel autre lecteur QR."
+web_generator_private_bulletpoint_3: 
+    other: "Seulement une clé de déchiffrement est publiée. Aucune information n'est transmise à l'organisateur."
+web_generator_pdf_button: 
+    other: "Télécharger PDF"
+web_generator_public_qr_title: 
+    other: "Code QR\\\n<span>publique</span>\n"
+web_generator_private_qr_title: 
+    other: "Code QR\\\n<span>privé</span>"
+web_generator_missing_input: 
+    other: "Veuillez remplir le champ obligatoire"
+web_upload_title: 
+    other: "Informer le visiteur"
+web_upload_period_label: 
+    other: "Période concernée"
+web_upload_period_from_label: 
+    other: "de"
+web_upload_period_to_label: 
+    other: "à"
+web_upload_note_label: 
+    other: "Indication au visiteur"
+web_upload_note_placeholder: 
+    other: "Que faire?"
+web_upload_upload_button: 
+    other: "Informer le visiteur"
+web_upload_success_message: 
+    other: "Téléchargement réussi"
+web_upload_error_message: 
+    other: "Téléchargement échoué"
+web_upload_missing_payload: 
+    other: "Code privé invalable. Scannez un code QR valable."
+web_landing_description: 
+    other: "Check-ins sauvé de manière décentralisé pour réunions et événements."
+web_landing_app_store_link: 
+    other: "https://itunes.apple.com/app/id1537859001"
+web_landing_play_store_link: 
+    other: "https://example.com"
+web_generator_pdf_created_on_format: 
+    other: "Créé le %d.%m.%Y à %H:%M h"
+web_generator_category_canteen: 
+    other: "Cantine"
+web_generator_category_library: 
+    other: "Bibliothèque"
+web_generator_category_lecture_room: 
+    other: "Auditoire"
+web_generator_category_shop: 
+    other: "Charger"
+web_generator_category_gym: 
+    other: "Centre de fitness"
+web_generator_category_kitchen_area: 
+    other: "Coin cuisine"
+web_generator_category_office_space: 
+    other: "Bureaux"
+web_qr_validity_period_from_label: 
+    other: "de"
+web_qr_validity_period_to_label: 
+    other: "à"

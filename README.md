@@ -44,7 +44,9 @@ Simlarly a dev server can be started with `hugo --config config.toml,${site_conf
 
 ### Getting the translations
 
-To get the translations from POEditor, simply run `getTranslations.py` with Python. You will need to create a `secrets.py` file in your root folder which looks like this:
+This project contains translations for German, English and French which are kept in the `i18n` subdirectory. These are only periodically updated.
+
+If you have your own translations on POEditor, you can simply run `getTranslations.py` with Python 3. You will need to create a `secrets.py` file in your root folder which looks like this:
 
     api_token = 'YOUR_POEDITOR_API_KEY'
     project_id = 'YOUR_POEDITOR_PROJECT_ID'
