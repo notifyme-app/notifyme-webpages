@@ -62,8 +62,8 @@ const generateKeys = async (qrButton) => {
 
     showFormData(data);
 
-    const publicImg = await generateDataURL(`${BASE_URL}?v=1#${publicMessage}`, { width: 161, color: { dark: "#413f8d" } });
-    const privateImg = await generateDataURL(`${UPLOAD_URL}?v=1#${privateMessage}`, { width: 161, color: { dark: "#f34e70" } });
+    const publicImg = await generateDataURL(`${BASE_URL}#${publicMessage}`, { width: 161, color: { dark: "#413f8d" } });
+    const privateImg = await generateDataURL(`${UPLOAD_URL}#${privateMessage}`, { width: 161, color: { dark: "#f34e70" } });
 
     document.querySelector("#public-qr-card .qr-code").innerHTML = `<img src=${publicImg} alt"">`;
     document.querySelector("#private-qr-card .qr-code").innerHTML = `<img src=${privateImg} alt"">`;
