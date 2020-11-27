@@ -18,8 +18,8 @@ const showFormData = (data) => {
     if (!!data.addition) subtitle += `, ${data.addition}`;
     document.getElementById("qr-subtitle").innerHTML = subtitle;
     document.getElementById("info-text").innerHTML = strftime(
-        window.currentLanguage.dateValidityMessage,
-        data.from
+        window.currentLanguage.codeValidityMessage,
+        data.validFrom
     ).replace(/\*\*(.+)\*\*/, "<b>$1</b>");
 };
 

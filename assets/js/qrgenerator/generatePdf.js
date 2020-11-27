@@ -176,6 +176,36 @@ const generatePDF = async (publicMessage, privateMessage, data) => {
         color: rgb(0, 0, 0),
     });
 
+    const validMessage = strftime(
+        window.currentLanguage.pdfCodeValidityMessage,
+        data.validFrom
+    ).split("\\\n");
+    console.log(validMessage);
+    const validSize = 13.9;
+    const firstLineWidth = interLight.widthOfTextAtSize(
+        validMessage[0],
+        validSize
+    );
+    publicPage.drawText(validMessage[0], {
+        x: publicPage.getWidth() / 2 - firstLineWidth / 2,
+        y: 172.8 + 19.1, // one line-height above second line
+        size: validSize,
+        font: interLight,
+        color: rgb(0, 0, 0),
+    });
+
+    const secondLineWidth = interBold.widthOfTextAtSize(
+        validMessage[1],
+        validSize
+    );
+    publicPage.drawText(validMessage[1], {
+        x: publicPage.getWidth() / 2 - secondLineWidth / 2,
+        y: 172.8,
+        size: validSize,
+        font: interBold,
+        color: rgb(0, 0, 0),
+    });
+
     return pdf.save();
 };
 
