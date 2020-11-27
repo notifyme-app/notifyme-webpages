@@ -128,7 +128,7 @@ export const initializeQrGenerator = () => {
     const validToInput = document.getElementById("validTo");
 
     rangePicker(validFromInput, validToInput, {
-        pastAllowed: false,
+        prohibitPast: true,
         maxRangeInHr: 24,
         maxFutureDays: 7,
     });

@@ -6,8 +6,7 @@ import "materialize-css/js/buttons.js";
 import "materialize-css/js/waves.js";
 import "materialize-css/js/toasts.js";
 import { disableButton, enableButton, ready } from "./utils/utils";
-require("flatpickr/dist/flatpickr.min.css");
-import flatpickr from "flatpickr";
+import rangePicker from "./utils/rangePicker";
 
 ready(() => console.log(`Commit: ${GIT_INFO}`));
 
@@ -83,14 +82,8 @@ ready(() => {
     const fromInput = document.getElementById("from");
     const toInput = document.getElementById("to");
 
-    const flatpickrOptions = {
-        enableTime: true,
-        altInput: true,
-        altFormat: "d.m.Y H:i",
-        time_24hr: true,
-        onChange: (date, str, picker) =>
-            picker.element.parentNode.children[1].classList.remove("invalid"),
-    };
-    flatpickr(fromInput, flatpickrOptions);
-    flatpickr(toInput, flatpickrOptions);
+    rangePicker(fromInput, toInput, {
+        prohibitFuture: true,
+        maxRangeInHr: 24,
+    });
 });

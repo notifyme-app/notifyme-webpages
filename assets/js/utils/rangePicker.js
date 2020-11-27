@@ -21,7 +21,7 @@ const updateErrorMsg = (input, errorMessage) => {
     helperText.dataset.error = errorMessage;
 };
 
-const checkValidFrom = (input, pastAllowed, maxFutureDays) => {
+const validateFrom = (input, prohibitPast, prohibitFuture, maxFutureDays) => {
     if (!input.value) {
         updateErrorMsg(input, window.currentLanguage.missingInput);
         input._flatpickr.element.parentNode.children[1].classList.add(
@@ -30,7 +30,7 @@ const checkValidFrom = (input, pastAllowed, maxFutureDays) => {
         return;
     }
 
-    let validFrom = Date.parse(input.value.trim().replace(" ", "T"));
+    let from = new Date(Date.parse(input.value.trim().replace(" ", "T")));
     const now = new Date();
     let earliestFrom = new Date(now.getTime());
     earliestFrom.setHours(0, 0, 0, 0);
@@ -38,14 +38,17 @@ const checkValidFrom = (input, pastAllowed, maxFutureDays) => {
     if (maxFutureDays !== undefined) {
         latestFrom.setDate(latestFrom.getDate() + maxFutureDays);
     } else {
-        latestFrom.setDate(validFrom.getDate() + 1);
+        latestFrom.setDate(from.getDate() + 1);
     }
-    if (!pastAllowed && validFrom < earliestFrom) {
+    if (
+        (prohibitPast && from < earliestFrom) ||
+        (prohibitFuture && from > now)
+    ) {
         updateErrorMsg(input, window.currentLanguage.invalidTime);
         input._flatpickr.element.parentNode.children[1].classList.add(
             "invalid"
         );
-    } else if (validFrom > latestFrom) {
+    } else if (from > latestFrom) {
         updateErrorMsg(
             input,
             window.currentLanguage.tooFarInTheFuture.replace(
@@ -64,7 +67,7 @@ const checkValidFrom = (input, pastAllowed, maxFutureDays) => {
     }
 };
 
-const checkValidTo = (inputTo, inputFrom, maxRangeInHr) => {
+const validateTo = (inputTo, inputFrom, prohibitFuture, maxRangeInHr) => {
     if (!inputFrom.value) {
         updateErrorMsg(inputFrom, window.currentLanguage.missingInput);
         inputFrom._flatpickr.element.parentNode.children[1].classList.remove(
@@ -81,16 +84,16 @@ const checkValidTo = (inputTo, inputFrom, maxRangeInHr) => {
         return;
     }
 
-    let validTo = Date.parse(inputTo.value.trim().replace(" ", "T"));
-    let validFrom = Date.parse(inputFrom.value.trim().replace(" ", "T"));
-    if (validTo < validFrom) {
+    let to = Date.parse(inputTo.value.trim().replace(" ", "T"));
+    let from = Date.parse(inputFrom.value.trim().replace(" ", "T"));
+    if (to < from || (prohibitFuture && to > new Date())) {
         updateErrorMsg(inputTo, window.currentLanguage.invalidTime);
         inputTo._flatpickr.element.parentNode.children[1].classList.add(
             "invalid"
         );
     } else if (
         maxRangeInHr !== undefined &&
-        validTo - validFrom > maxRangeInHr * 60 * 60 * 1000
+        to - from > maxRangeInHr * 60 * 60 * 1000
     ) {
         updateErrorMsg(
             inputTo,
@@ -107,15 +110,28 @@ const checkValidTo = (inputTo, inputFrom, maxRangeInHr) => {
     }
 };
 
+const defaultOptions = {
+    prohibitPast: false,
+    prohibitFuture: false,
+    maxRangeInHR: undefined,
+    maxFutureDays: undefined,
+};
+
 const rangePicker = (inputFrom, inputTo, options = {}) => {
-    const { pastAllowed, maxRangeInHr, maxFutureDays } = options;
+    const {
+        prohibitPast,
+        prohibitFuture,
+        maxRangeInHr,
+        maxFutureDays,
+    } = Object.assign({}, defaultOptions, options);
     inputFrom.onchange = () => {
-        checkValidFrom(inputFrom, pastAllowed, maxFutureDays);
-        checkValidTo(inputTo, inputFrom, maxRangeInHr);
+        validateFrom(inputFrom, prohibitPast, prohibitFuture, maxFutureDays);
+        validateTo(inputTo, inputFrom, prohibitFuture, maxRangeInHr);
     };
     updateErrorMsg(inputFrom, window.currentLanguage.missingInput);
 
-    inputTo.onchange = () => checkValidTo(inputTo, inputFrom, maxRangeInHr);
+    inputTo.onchange = () =>
+        validateTo(inputTo, inputFrom, prohibitFuture, maxRangeInHr);
     updateErrorMsg(inputTo, window.currentLanguage.missingInput);
 
     flatpickr(inputFrom, flatpickrOptions);
