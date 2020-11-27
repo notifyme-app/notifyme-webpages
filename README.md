@@ -48,3 +48,6 @@ To get the translations from POEditor, simply run `getTranslations.py` with Pyth
 
     api_token = 'YOUR_POEDITOR_API_KEY'
     project_id = 'YOUR_POEDITOR_PROJECT_ID'
+    
+## License
+This project is licensed under the terms of the MPL 2 license. See the [LICENSE](LICENSE) file.
