@@ -1,6 +1,6 @@
 import QRCode from "qrcode";
 
-var defaultOptions = {
+let defaultOptions = {
     errorCorrectionLevel: "L",
     margin: 0,
 };

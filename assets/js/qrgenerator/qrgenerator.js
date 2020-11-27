@@ -110,16 +110,16 @@ const backToGenerator = () => {
 };
 
 const updateErrorMsg = (helperTextId, dataKey) => {
-    var helperText = document.getElementById(helperTextId);
+    let helperText = document.getElementById(helperTextId);
     helperText.dataset.error = helperText.dataset[dataKey];
 };
 
 const checkValidFrom = (input) => {
     const createBeforeMaxDays = 7;
-    var validFrom = Date.parse(input.value.trim().replace(" ", "T"));
+    let validFrom = Date.parse(input.value.trim().replace(" ", "T"));
     const now = new Date();
-    var earliestFrom = new Date(now.getTime());
-    var latestFrom = new Date(now.getTime());
+    let earliestFrom = new Date(now.getTime());
+    let latestFrom = new Date(now.getTime());
     latestFrom.setDate(latestFrom.getDate() + createBeforeMaxDays);
     if (validFrom < earliestFrom) {
         updateErrorMsg("validFromHelperText", "errorInvalid");
@@ -143,8 +143,8 @@ const checkValidTo = (input, validFromInput) => {
     if (input.value !== "") {
         if (validFromInput.value !== "") {
             const maxDurationInH = 24;
-            var validTo = Date.parse(input.value.trim().replace(" ", "T"));
-            var validFrom = Date.parse(
+            let validTo = Date.parse(input.value.trim().replace(" ", "T"));
+            let validFrom = Date.parse(
                 validFromInput.value.trim().replace(" ", "T")
             );
             if (validTo < validFrom) {
