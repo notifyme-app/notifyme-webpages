@@ -1,7 +1,17 @@
 require("flatpickr/dist/flatpickr.min.css");
 import flatpickr from "flatpickr";
+import { German } from "flatpickr/dist/l10n/de.js";
+import { French } from "flatpickr/dist/l10n/fr.js";
+import { Italian } from "flatpickr/dist/l10n/it.js";
 
-flatpickr.localize(flatpickr.l10ns[window.currentLanguage.shortcode]);
+const locales = {
+    de: German,
+    fr: French,
+    en: flatpickr.l10ns.en,
+    it: Italian,
+};
+
+flatpickr.localize(locales[window.currentLanguage.shortcode]);
 
 const flatpickrOptions = {
     enableTime: true,
