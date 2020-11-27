@@ -1,17 +1,16 @@
 <header>
     <a href="https://notify-me.ch" >
-      <img src="images/logo.svg" alt="Logo">
+      <img src="images/logo.svg" alt="Logo" />
       <h1>Notify<span class="primary-color">Me</span></h1>
     </a>
     <div class="language-selection">
         {{ $lang := .Site.Language.Lang }}
         {{ range .AllTranslations }}
-        {{ if eq $lang .Lang }}
-        <span>{{ .Lang }}</span>
-        {{ else }}
-        <a href="{{ .Permalink }}">{{ .Lang }}</a>
-        {{ end }}
-        
+          {{ if eq $lang .Lang }}
+            <span>{{ .Lang }}</span>
+          {{ else }}
+            <a href="{{ .Permalink }}">{{ .Lang }}</a>
+          {{ end }}
         {{ end }}
       </div>
 </header>
