@@ -39,7 +39,7 @@
                             class="validate" maxlength="50">
                         <label for="addition">{{ T "generator_addition_label" }}</label>
                     </div>
-                    <div class="input-field col s12">
+                    <!-- <div class="input-field col s12">
                         <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "qr_validity_period_from_label" }}" >
                         <label for="validFrom">{{ T "qr_validity_period_label" }}*</label>
                         <span class="helper-text"></span>
@@ -47,9 +47,18 @@
                     <div class="input-field col s12 no-label">
                         <input name="validTo" id="validTo" type="text" placeholder="{{ T "qr_validity_period_to_label" }}" >
                         <span class="helper-text"></span>
+                    </div> -->
+                    <div class="input-field col s12">
+                        <input name="validDate" id="validDate" type="text" placeholder="{{ T "generator_date_placeholder" }}" >
+                        <label for="validDate">{{ T "generator_date_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
                     </div>
                 </div>
             </form>
+            <div id="validity-information" class="row">
+                <img src="images/info_icon.svg" alt="" />
+                <p>{{ T "generator_validity_information" }}</p>
+            </div>
             <div class="btn-row row">
                 <a id="generate-qr-btn" class="waves-effect waves-light btn">
                     {{ T "generator_generation_button_label" }}

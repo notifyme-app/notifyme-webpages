@@ -13,7 +13,9 @@ const locales = {
 
 flatpickr.localize(locales[window.currentLanguage.shortcode]);
 
-const flatpickrOptions = {
+export { flatpickr as localizedFlatpickr };
+
+export const flatpickrOptions = {
     enableTime: true,
     altInput: true,
     altFormat: "d.m.Y H:i",
@@ -127,7 +129,7 @@ const defaultOptions = {
     maxFutureDays: undefined,
 };
 
-const rangePicker = (inputFrom, inputTo, options = {}) => {
+export const rangePicker = (inputFrom, inputTo, options = {}) => {
     const {
         prohibitPast,
         prohibitFuture,
@@ -147,5 +149,3 @@ const rangePicker = (inputFrom, inputTo, options = {}) => {
     flatpickr(inputFrom, flatpickrOptions);
     flatpickr(inputTo, flatpickrOptions);
 };
-
-export default rangePicker;

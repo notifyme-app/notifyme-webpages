@@ -6,7 +6,7 @@ import "materialize-css/js/buttons.js";
 import "materialize-css/js/waves.js";
 import "materialize-css/js/toasts.js";
 import { disableButton, enableButton, ready } from "./utils/utils";
-import rangePicker from "./utils/rangePicker";
+import { rangePicker } from "./utils/rangePicker";
 
 ready(() => console.log(`Commit: ${GIT_INFO}`));
 
