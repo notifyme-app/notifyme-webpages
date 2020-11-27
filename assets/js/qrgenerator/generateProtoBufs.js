@@ -1,7 +1,7 @@
-import protobuf from 'protobufjs'
-import _sodium from 'libsodium-wrappers-sumo'
-import qrMessage from './protobuf/qrMessage'
-import seedMessage from './protobuf/seedMessage'
+import protobuf from "protobufjs";
+import _sodium from "libsodium-wrappers-sumo";
+import qrMessage from "./protobuf/qrMessage";
+import seedMessage from "./protobuf/seedMessage";
 
 const rootQr = protobuf.Root.fromJSON(qrMessage);
 const QRCodeContent = rootQr.lookupType("qrpackage.QRCodeContent");
@@ -10,7 +10,15 @@ const QRCodeWrapper = rootQr.lookupType("qrpackage.QRCodeWrapper");
 const rootSeed = protobuf.Root.fromJSON(seedMessage);
 const SeedMessage = rootSeed.lookupType("seedpackage.SeedMessage");
 
-const generateProtoBufs = async (name, location, room, venueType, public_key, validFrom, validTo) => {
+const generateProtoBufs = async (
+    name,
+    location,
+    room,
+    venueType,
+    public_key,
+    validFrom,
+    validTo
+) => {
     await _sodium.ready;
     const sodium = _sodium;
 
@@ -24,11 +32,13 @@ const generateProtoBufs = async (name, location, room, venueType, public_key, va
         notificationKey: notificationKey,
         name: name,
         location: location,
-        room: room
+        room: room,
     });
     const seed = SeedMessage.encode(seedMessage).finish();
 
-    const { publicKey, privateKey } = sodium.crypto_sign_seed_keypair(sodium.crypto_hash_sha256(seed));
+    const { publicKey, privateKey } = sodium.crypto_sign_seed_keypair(
+        sodium.crypto_hash_sha256(seed)
+    );
 
     let qrCodeContent = QRCodeContent.create({
         version: 1,
@@ -42,22 +52,29 @@ const generateProtoBufs = async (name, location, room, venueType, public_key, va
         validTo: validTo,
     });
 
-    const qrCodeContentProtoBufBytes = QRCodeContent.encode(qrCodeContent).finish();
-    const qrCodeContentSignature = sodium.crypto_sign_detached(qrCodeContentProtoBufBytes, privateKey);
+    const qrCodeContentProtoBufBytes = QRCodeContent.encode(
+        qrCodeContent
+    ).finish();
+    const qrCodeContentSignature = sodium.crypto_sign_detached(
+        qrCodeContentProtoBufBytes,
+        privateKey
+    );
 
     let qrCodeWrapper = QRCodeWrapper.create({
         version: 1,
         content: qrCodeContent,
-        signature: qrCodeContentSignature
+        signature: qrCodeContentSignature,
     });
 
     const ctx = sodium.crypto_box_seal(seed, authorityPublicKey);
-    const qrCodeWrapperProtoBufBytes = QRCodeWrapper.encode(qrCodeWrapper).finish();
+    const qrCodeWrapperProtoBufBytes = QRCodeWrapper.encode(
+        qrCodeWrapper
+    ).finish();
 
     return {
         privateMessage: sodium.to_base64(ctx),
-        publicMessage: sodium.to_base64(qrCodeWrapperProtoBufBytes)
+        publicMessage: sodium.to_base64(qrCodeWrapperProtoBufBytes),
     };
-}
+};
 
 export default generateProtoBufs;

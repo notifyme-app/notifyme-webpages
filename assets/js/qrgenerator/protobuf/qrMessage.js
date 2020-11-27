@@ -15,77 +15,77 @@ export default {
                         GYM: 8,
                         KITCHEN_AREA: 9,
                         OFFICE_SPACE: 10,
-                    }
+                    },
                 },
                 QRCodeContent: {
                     fields: {
                         version: {
                             rule: "required",
                             type: "int32",
-                            id: 1
+                            id: 1,
                         },
                         publicKey: {
                             rule: "required",
                             type: "bytes",
-                            id: 2
+                            id: 2,
                         },
                         name: {
                             rule: "required",
                             type: "string",
-                            id: 3
+                            id: 3,
                         },
                         location: {
                             rule: "required",
                             type: "string",
-                            id: 4
+                            id: 4,
                         },
                         room: {
                             rule: "required",
                             type: "string",
-                            id: 5
+                            id: 5,
                         },
                         venueType: {
                             rule: "required",
                             type: "VenueType",
-                            id: 6
+                            id: 6,
                         },
                         notificationKey: {
                             rule: "required",
                             type: "bytes",
-                            id: 7
+                            id: 7,
                         },
                         validFrom: {
                             rule: "optional",
                             type: "uint64",
-                            id: 8
+                            id: 8,
                         },
                         validTo: {
                             rule: "optional",
                             type: "uint64",
-                            id: 9
-                        }
-                    }
+                            id: 9,
+                        },
+                    },
                 },
                 QRCodeWrapper: {
                     fields: {
                         version: {
                             rule: "required",
                             type: "int32",
-                            id: 1
+                            id: 1,
                         },
                         content: {
                             rule: "required",
                             type: "QRCodeContent",
-                            id: 2
+                            id: 2,
                         },
                         signature: {
                             rule: "required",
                             type: "bytes",
-                            id: 3
-                        }
-                    }
-                }
-            }
-        }
-    }
+                            id: 3,
+                        },
+                    },
+                },
+            },
+        },
+    },
 };
