@@ -2,12 +2,8 @@
 
 * This project requires Hugo 0.78.2 which can be installed from [here](https://gohugo.io/getting-started/installing). **Careful** the extended version is needed for SCSS preprocessing.
 * Download `yarn` and run `yarn install` to install all dependencies.
-* Run `yarn build:prod:js` to precompile `assets/js/index.js`. Run `yarn build:dev:js` to include a source map and not minify the javascript.
-* Run `yarn watch:js` to precompile `assets/js/index.js` and watch for changes.
-
-### Start Server
-
-A dev server can be started with `hugo --config config.toml,config_qrgenerator server`
+* Run `yarn build:prod:js` to precompile javascript files. Run `yarn build:dev:js` to include a source map and not minify the javascript.
+* Run `yarn watch:js` to precompile javascript files and watch for changes.
 
 ### Build Site
 
@@ -18,6 +14,10 @@ You can build two different Webpages from this code. They are defined in their r
 * Landing Page `config_landingpage.toml`
 
 The sites can be built with the command `hugo --config config.toml,${site_config}`. The build files are placed in the `public/` folder.
+
+### Start Server
+
+Simlarly a dev server can be started with `hugo --config config.toml,${site_config} server`
 
 ### Getting the translations
 
