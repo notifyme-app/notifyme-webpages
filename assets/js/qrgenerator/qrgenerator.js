@@ -2,8 +2,7 @@ import generateProtoBufs from "./generateProtoBufs";
 import { generateDataURL } from "./generateQrCode";
 import { disableButton, enableButton } from "../utils/utils";
 import generatePDF from "./generatePdf";
-require("flatpickr/dist/flatpickr.min.css");
-import flatpickr from "flatpickr";
+import rangePicker from "../utils/rangePicker";
 
 const showFormData = (data) => {
     document.getElementById(
@@ -109,69 +108,6 @@ const backToGenerator = () => {
     document.getElementById("qrcodes").style.display = "none";
 };
 
-const updateErrorMsg = (helperTextId, dataKey) => {
-    let helperText = document.getElementById(helperTextId);
-    helperText.dataset.error = helperText.dataset[dataKey];
-};
-
-const checkValidFrom = (input) => {
-    const createBeforeMaxDays = 7;
-    let validFrom = Date.parse(input.value.trim().replace(" ", "T"));
-    const now = new Date();
-    let earliestFrom = new Date(now.getTime());
-    let latestFrom = new Date(now.getTime());
-    latestFrom.setDate(latestFrom.getDate() + createBeforeMaxDays);
-    if (validFrom < earliestFrom) {
-        updateErrorMsg("validFromHelperText", "errorInvalid");
-        input._flatpickr.element.parentNode.children[1].classList.add(
-            "invalid"
-        );
-    } else if (validFrom > latestFrom) {
-        updateErrorMsg("validFromHelperText", "errorFromOverflow");
-        input._flatpickr.element.parentNode.children[1].classList.add(
-            "invalid"
-        );
-    } else {
-        updateErrorMsg("validFromHelperText", "errorMissing");
-        input._flatpickr.element.parentNode.children[1].classList.remove(
-            "invalid"
-        );
-    }
-};
-
-const checkValidTo = (input, validFromInput) => {
-    if (input.value !== "") {
-        if (validFromInput.value !== "") {
-            const maxDurationInH = 24;
-            let validTo = Date.parse(input.value.trim().replace(" ", "T"));
-            let validFrom = Date.parse(
-                validFromInput.value.trim().replace(" ", "T")
-            );
-            if (validTo < validFrom) {
-                updateErrorMsg("validToHelperText", "errorInvalid");
-                input._flatpickr.element.parentNode.children[1].classList.add(
-                    "invalid"
-                );
-            } else if (validTo - validFrom > maxDurationInH * 60 * 60 * 1000) {
-                updateErrorMsg("validToHelperText", "errorDurationOverflow");
-                input._flatpickr.element.parentNode.children[1].classList.add(
-                    "invalid"
-                );
-            } else {
-                updateErrorMsg("validToHelperText", "errorMissing");
-                input._flatpickr.element.parentNode.children[1].classList.remove(
-                    "invalid"
-                );
-            }
-        } else {
-            updateErrorMsg("validToHelperText", "errorMissing");
-            input._flatpickr.element.parentNode.children[1].classList.remove(
-                "invalid"
-            );
-        }
-    }
-};
-
 export const initializeQrGenerator = () => {
     const qrButton = document.getElementById("generate-qr-btn");
     qrButton.onclick = () => {
@@ -191,27 +127,9 @@ export const initializeQrGenerator = () => {
     const validFromInput = document.getElementById("validFrom");
     const validToInput = document.getElementById("validTo");
 
-    validFromInput.onchange = () => {
-        checkValidFrom(validFromInput);
-        checkValidTo(validToInput, validFromInput);
-    };
-    updateErrorMsg("validFromHelperText", "errorMissing");
-
-    validToInput.onchange = () => checkValidTo(validToInput, validFromInput);
-    updateErrorMsg("validToHelperText", "errorMissing");
-
-    const flatpickrOptions = {
-        enableTime: true,
-        altInput: true,
-        altFormat: "d.m.Y H:i",
-        time_24hr: true,
-        onClose: function (date, str, picker) {
-            if (picker.input.value === "") {
-                picker.element.parentNode.children[1].classList.add("invalid");
-            }
-        },
-        monthSelectorType: "static",
-    };
-    flatpickr(validFromInput, flatpickrOptions);
-    flatpickr(validToInput, flatpickrOptions);
+    rangePicker(validFromInput, validToInput, {
+        pastAllowed: false,
+        maxRangeInHr: 24,
+        maxFutureDays: 7,
+    });
 };
