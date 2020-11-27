@@ -1,3 +1,4 @@
+import strftime from "strftime";
 import generateProtoBufs from "./generateProtoBufs";
 import { generateDataURL } from "./generateQrCode";
 import { disableButton, enableButton } from "../utils/utils";
@@ -16,6 +17,10 @@ const showFormData = (data) => {
     let subtitle = data.subtitle;
     if (!!data.addition) subtitle += `, ${data.addition}`;
     document.getElementById("qr-subtitle").innerHTML = subtitle;
+    document.getElementById("info-text").innerHTML = strftime(
+        window.currentLanguage.dateValidityMessage,
+        data.from
+    ).replace(/\*\*(.+)\*\*/, "<b>$1</b>");
 };
 
 const generateKeys = async (qrButton) => {
@@ -40,7 +45,7 @@ const generateKeys = async (qrButton) => {
     if (
         !data.title ||
         !data.subtitle ||
-        !data.validDate 
+        !data.validDate
         // !data.validFrom ||
         // !data.validTo ||
         // document
@@ -62,14 +67,18 @@ const generateKeys = async (qrButton) => {
         // if (!data.validTo) {
         //     document.querySelector("#validTo + input").classList.add("invalid");
         // }
-        if(!data.validDate) {
-            document.querySelector("#validDate + input").classList.add("invalid");
+        if (!data.validDate) {
+            document
+                .querySelector("#validDate + input")
+                .classList.add("invalid");
         }
         enableButton(qrButton);
         return;
     }
 
-    data.validFrom = new Date(Date.parse(data.validDate.trim().replace(" ", "T")));
+    data.validFrom = new Date(
+        Date.parse(data.validDate.trim().replace(" ", "T"))
+    );
     data.validFrom.setHours(0, 0, 0, 0);
     data.validTo = new Date(data.validFrom.getTime());
     data.validTo.setDate(data.validTo.getDate() + 1);
