@@ -12,7 +12,7 @@ import { ready } from "./utils/utils";
 ready(() => console.log(`Commit: ${GIT_INFO}`));
 
 ready(() => {
-    const elems = document.querySelectorAll("select");
+    const elems = document.querySelectorAll("select.material-select");
     M.FormSelect.init(elems);
 });
 

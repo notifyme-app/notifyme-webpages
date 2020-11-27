@@ -210,6 +210,7 @@ export const initializeQrGenerator = () => {
                 picker.element.parentNode.children[1].classList.add("invalid");
             }
         },
+        monthSelectorType: "static",
     };
     flatpickr(validFromInput, flatpickrOptions);
     flatpickr(validToInput, flatpickrOptions);
