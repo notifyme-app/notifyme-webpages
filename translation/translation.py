@@ -27,13 +27,17 @@ def loadLanguage( language, projectID, localesFolder, api_token ):
     if results['response']['code'] == '200':
         # Open file
         fo = open(localesFolder+"/"+language+".yaml", "wb")
+        count = 0
 
         for translation in results['list']:
+            if not translation['term'].startswith("web_"):
+                continue
             if translation['definition']['form'] == "":
                 continue
             lineUtf8 = (translation['term'] + ": \n    other: \"" + translation['definition']['form'].replace('\\','\\\\').replace('\"', '\\\"').replace('\n', '\\n') + "\"\n").encode('UTF-8')
-            fo.write(lineUtf8);
+            fo.write(lineUtf8)
+            count = count + 1
 
         # Close opend file
         fo.close()
-        print('Finished: '+language+" ("+str(len(results['list']))+' terms)')
+        print('Finished: '+language+" ("+str(count)+' terms)')

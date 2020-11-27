@@ -3,65 +3,65 @@
     <img id="illu-main" class="hide-on-med-and-down" src="images/generator_illu_main.svg" alt="">
     <div id="generator-card" class="card white">
         <div class="card-content">
-            <span class="card-title">{{ T "generator_title" }}</span>
+            <span class="card-title">{{ T "web_generator_title" }}</span>
             <form id="qr-form">
                 <div class="row">
                     <div class="input-field col s12 optional">
                         <select name="category" id="category" class="material-select">
-                            <option value="0">{{ T "generator_category_other" }}</option>
-                            <option value="1">{{ T "generator_category_meeting_room" }}</option>
-                            <option value="2">{{ T "generator_category_cafeteria" }}</option>
-                            <option value="3">{{ T "generator_category_private_event" }}</option>
-                            <option value="4">{{ T "generator_category_canteen" }}</option>
-                            <option value="5">{{ T "generator_category_library" }}</option>
-                            <option value="6">{{ T "generator_category_lecture_room" }}</option>
-                            <option value="7">{{ T "generator_category_shop" }}</option>
-                            <option value="8">{{ T "generator_category_gym" }}</option>
-                            <option value="9">{{ T "generator_category_kitchen_area" }}</option>
-                            <option value="10">{{ T "generator_category_office_space" }}</option>
+                            <option value="0">{{ T "web_generator_category_other" }}</option>
+                            <option value="1">{{ T "web_generator_category_meeting_room" }}</option>
+                            <option value="2">{{ T "web_generator_category_cafeteria" }}</option>
+                            <option value="3">{{ T "web_generator_category_private_event" }}</option>
+                            <option value="4">{{ T "web_generator_category_canteen" }}</option>
+                            <option value="5">{{ T "web_generator_category_library" }}</option>
+                            <option value="6">{{ T "web_generator_category_lecture_room" }}</option>
+                            <option value="7">{{ T "web_generator_category_shop" }}</option>
+                            <option value="8">{{ T "web_generator_category_gym" }}</option>
+                            <option value="9">{{ T "web_generator_category_kitchen_area" }}</option>
+                            <option value="10">{{ T "web_generator_category_office_space" }}</option>
                         </select>
-                        <label>{{ T "generator_category_label" }}*</label>
+                        <label>{{ T "web_generator_category_label" }}*</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="{{ T "generator_title_placeholder" }}" name="title" id="title" type="text"
+                        <input placeholder="{{ T "web_generator_title_placeholder" }}" name="title" id="title" type="text"
                             class="validate" required maxlength="50">
-                        <label for="title">{{ T "generator_title_label" }}*</label>
-                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
+                        <label for="title">{{ T "web_generator_title_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="{{ T "generator_subtitle_placeholder" }}" name="subtitle" id="subtitle"
+                        <input placeholder="{{ T "web_generator_subtitle_placeholder" }}" name="subtitle" id="subtitle"
                             type="text" class="validate" required maxlength="50">
-                        <label for="subtitle">{{ T "generator_subtitle_label" }}*</label>
-                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
+                        <label for="subtitle">{{ T "web_generator_subtitle_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
                     </div>
                     <div class="input-field col s12 optional">
-                        <input placeholder="{{ T "generator_addition_placeholder" }}" name="addition" id="addition" type="text"
+                        <input placeholder="{{ T "web_generator_addition_placeholder" }}" name="addition" id="addition" type="text"
                             class="validate" maxlength="50">
-                        <label for="addition">{{ T "generator_addition_label" }}</label>
+                        <label for="addition">{{ T "web_generator_addition_label" }}</label>
                     </div>
                     <!-- <div class="input-field col s12">
-                        <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "qr_validity_period_from_label" }}" >
-                        <label for="validFrom">{{ T "qr_validity_period_label" }}*</label>
+                        <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "web_qr_validity_period_from_label" }}" >
+                        <label for="validFrom">{{ T "web_qr_validity_period_label" }}*</label>
                         <span class="helper-text"></span>
                     </div>
                     <div class="input-field col s12 no-label">
-                        <input name="validTo" id="validTo" type="text" placeholder="{{ T "qr_validity_period_to_label" }}" >
+                        <input name="validTo" id="validTo" type="text" placeholder="{{ T "web_qr_validity_period_to_label" }}" >
                         <span class="helper-text"></span>
                     </div> -->
                     <div class="input-field col s12">
-                        <input name="validDate" id="validDate" type="text" placeholder="{{ T "generator_date_placeholder" }}" >
-                        <label for="validDate">{{ T "generator_date_label" }}*</label>
-                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
+                        <input name="validDate" id="validDate" type="text" placeholder="{{ T "web_generator_date_placeholder" }}" >
+                        <label for="validDate">{{ T "web_generator_date_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
                     </div>
                 </div>
             </form>
             <div id="validity-information" class="row">
                 <img src="images/info_icon.svg" alt="" />
-                <p>{{ T "generator_validity_information" }}</p>
+                <p>{{ T "web_generator_validity_information" }}</p>
             </div>
             <div class="btn-row row">
                 <a id="generate-qr-btn" class="waves-effect waves-light btn">
-                    {{ T "generator_generation_button_label" }}
+                    {{ T "web_generator_generation_button_label" }}
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer">
                             <div class="circle-clipper left">
@@ -84,7 +84,7 @@
 <div id="qrcodes">
     <div id="back-to-generator" class="row">
         <img src="images/arrow-left.svg" alt="">
-        <div class="hide-on-small-only">{{ T "generator_back" }}</div>
+        <div class="hide-on-small-only">{{ T "web_generator_back" }}</div>
     </div>
     <div id="qr-information" class="row">
         <img id="qr-category" src="" alt="">
@@ -99,30 +99,30 @@
                     <div class="information">
                         <img src="images/icon_public.svg" alt="">
                         <h1>
-                            {{ T "generator_public_qr_title" | markdownify }}
+                            {{ T "web_generator_public_qr_title" | markdownify }}
                         </h1>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/visitors_icon.svg" alt="">
                             <div class="text">
-                                {{ T "generator_public_bulletpoint_1" }}
+                                {{ T "web_generator_public_bulletpoint_1" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/mobile_icon.svg" alt="">
                             <div class="text">
-                                {{ T "generator_public_bulletpoint_2" }}
+                                {{ T "web_generator_public_bulletpoint_2" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/encryption_icon.svg" alt="">
                             <div class="text">
-                                {{ T "generator_public_bulletpoint_3" }}
+                                {{ T "web_generator_public_bulletpoint_3" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/info_icon.svg" alt="">
                             <div class="text" id="info-text">
-                                {{ T "generator_code_validity_message" }}
+                                {{ T "web_generator_code_validity_message" }}
                             </div>
                         </div>
                     </div>
@@ -136,24 +136,24 @@
                     <div class="information">
                         <img src="images/icon_private.svg" alt="">
                         <h1>
-                            {{ T "generator_private_qr_title" | markdownify }}
+                            {{ T "web_generator_private_qr_title" | markdownify }}
                         </h1>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/message_icon.svg" alt="">
                             <div class="text">
-                                {{ T "generator_private_bulletpoint_1" }}
+                                {{ T "web_generator_private_bulletpoint_1" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/mobile_icon_red.svg" alt="">
                             <div class="text">
-                                {{ T "generator_private_bulletpoint_2" }}
+                                {{ T "web_generator_private_bulletpoint_2" }}
                             </div>
                         </div>
                         <div class="bullet-point">
                             <img class="bullet-icon" src="images/key_icon.svg" alt="">
                             <div class="text">
-                                {{ T "generator_private_bulletpoint_3" }}
+                                {{ T "web_generator_private_bulletpoint_3" }}
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
     </div>
     <div class="btn-row row">
         <a id="download-pdf-btn" class="waves-effect waves-light btn" download="QR-Codes">
-            {{ T "generator_pdf_button" }}
+            {{ T "web_generator_pdf_button" }}
             <div class="preloader-wrapper small active">
                 <div class="spinner-layer">
                     <div class="circle-clipper left">

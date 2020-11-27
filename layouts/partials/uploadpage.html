@@ -1,28 +1,28 @@
 <div id="uploadpage" class="row">
     <div class="card white">
         <div class="card-content">
-            <span class="card-title">{{ T "upload_title" }}</span>
+            <span class="card-title">{{ T "web_upload_title" }}</span>
             <form id="upload-form">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="from" id="from" type="text" placeholder="{{ T "upload_period_from_label" }}">
-                        <label for="from">{{ T "upload_period_label" }}*</label>
-                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
+                        <input name="from" id="from" type="text" placeholder="{{ T "web_upload_period_from_label" }}">
+                        <label for="from">{{ T "web_upload_period_label" }}*</label>
+                        <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
                     </div>
                     <div class="input-field col s12">
-                        <input name="to" id="to" type="text" placeholder="{{ T "upload_period_to_label" }}">  
-                        <span class="helper-text" data-error="{{ T "generator_missing_input" }}"></span>
+                        <input name="to" id="to" type="text" placeholder="{{ T "web_upload_period_to_label" }}">  
+                        <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
                     </div>
                     <div id="note-input-wrapper" class="input-field col s12">
-                        <textarea placeholder="{{ T "upload_note_placeholder" }}" name="note" id="note"
+                        <textarea placeholder="{{ T "web_upload_note_placeholder" }}" name="note" id="note"
                             class="validate materialize-textarea"></textarea>
-                        <label for="note">{{ T "upload_note_label" }}</label>
+                        <label for="note">{{ T "web_upload_note_label" }}</label>
                     </div>
                 </div>
             </form>
             <div class="btn-row row">
                 <a id="upload-btn" class="waves-effect waves-light btn">
-                    {{ T "upload_upload_button" }}
+                    {{ T "web_upload_upload_button" }}
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer">
                             <div class="circle-clipper left">
