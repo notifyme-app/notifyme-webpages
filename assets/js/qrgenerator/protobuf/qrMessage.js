@@ -68,7 +68,7 @@ export default {
                             type: "bytes",
                             id: 2,
                         },
-                        r2: {
+                        r1: {
                             rule: "required",
                             type: "bytes",
                             id: 3,

@@ -53,7 +53,7 @@ const generateProtoBufs = async (
     let qrCodeWrapper = QRCodeWrapper.create({
         version: 1,
         publicKey: publicKey,
-        r2: r2,
+        r1: r1,
         content: qrCodeContent,
     });
 
