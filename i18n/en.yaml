@@ -88,10 +88,24 @@ web_generator_category_kitchen_area:
     other: "Kitchen Area"
 web_generator_category_office_space: 
     other: "Office Space"
+web_qr_validity_period_label: 
+    other: "Validity (24h max)"
 web_qr_validity_period_from_label: 
     other: "from"
 web_qr_validity_period_to_label: 
     other: "to"
+web_max_qr_validity_period_error: 
+    other: "The maximum validity period is %d."
+web_qr_validity_period_earliest_from_error: 
+    other: "QR codes can only be generated %d in advance."
+web_qr_validity_period_invalid_time: 
+    other: "Invalid time"
+web_generator_date_label: 
+    other: "Valid on"
+web_generator_date_placeholder: 
+    other: "Pick date"
+web_generator_validity_information: 
+    other: "The demo QR codes are only available on the same day."
 web_generator_code_validity_message: 
     other: "This demo QR code is valid on **%e %B %Y**"
 web_pdf_code_valid_date_format: 
@@ -100,3 +114,7 @@ web_date_picker_format:
     other: "j F Y"
 web_date_picker_format_with_time: 
     other: "j F Y H:i"
+web_page_title: 
+    other: "NotifyMe"
+web_page_description: 
+    other: "A decentralised check-in system for meetings and events"

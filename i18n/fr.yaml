@@ -88,10 +88,24 @@ web_generator_category_kitchen_area:
     other: "Coin cuisine"
 web_generator_category_office_space: 
     other: "Bureaux"
+web_qr_validity_period_label: 
+    other: "Validité (24h max.)"
 web_qr_validity_period_from_label: 
     other: "de"
 web_qr_validity_period_to_label: 
     other: "à"
+web_max_qr_validity_period_error: 
+    other: "La durée de validité maximale est %d heures."
+web_qr_validity_period_earliest_from_error: 
+    other: "Les codes QR peuvent être générés maximum 12 jours en avance."
+web_qr_validity_period_invalid_time: 
+    other: "Date/heure invalide."
+web_generator_date_label: 
+    other: "Valide le"
+web_generator_date_placeholder: 
+    other: "Choisir date"
+web_generator_validity_information: 
+    other: "Le code QR démo est uniquement valide le jour même."
 web_generator_code_validity_message: 
     other: "Ce code QR démo est valable le **%d.%m.%Y**"
 web_pdf_code_valid_date_format: 
@@ -100,3 +114,7 @@ web_date_picker_format:
     other: "d.m.Y"
 web_date_picker_format_with_time: 
     other: "d.m.Y"
+web_page_title: 
+    other: "NotifyMe"
+web_page_description: 
+    other: "Un système d'enregistrement décentralisé pour réunions, rencontres et événements."

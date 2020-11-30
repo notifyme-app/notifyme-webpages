@@ -114,3 +114,7 @@ web_date_picker_format:
     other: "d.m.Y"
 web_date_picker_format_with_time: 
     other: "d.m.Y H:i"
+web_page_title: 
+    other: "NotifyMe"
+web_page_description: 
+    other: "Dezentral gespeicherte Check-Ins für Meetings & Events"

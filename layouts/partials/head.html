@@ -1,8 +1,8 @@
 <head>
-    <title>{{ $.Site.Title }}</title>
+    <title>{{ T "web_page_title"}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ $.Site.Params.description }}" />
+    <meta name="description" content="{{ T "web_page_description"}}" />
     <base href="{{ .Site.BaseURL }}" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,9 +82,24 @@
         content="images/favicon/ms-icon-144x144.png"
     />
 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@ubique_ch" />
+    <meta
+        name="twitter:image"
+        content="{{ .Site.BaseURL }}/images/illustrations-hero-l-social-media-twitter-{{ lower .Language.Lang }}.png"
+    />
+    <meta name="twitter:description" content="{{ T "web_page_description"}}" />
+    <meta property="og:title" content="{{ T "web_page_title" }}" />
+    <meta property="og:url" content="{{ .Site.BaseURL }}" />
+    <meta
+        property="og:image"
+        content="{{ .Site.BaseURL }}/images/illustrations-hero-l-social-media-facebook-{{ lower .Language.Lang }}.png"
+    />
+    <meta property="og:description" content="{{ T "web_page_description"}}" />
+
     <!-- add "| minify | fingerprint" later -->
     {{ $main := resources.Get "scss/main.scss" | toCSS }} 
-    {{ $materialize := resources.Get "scss/materialize.scss" | toCSS }} 
+    {{ $materialize := resources.Get "scss/materialize.scss" | toCSS }}
     {{ $styles := slice $materialize $main | resources.Concat "css/bundle.css" }}
     <link
         rel="stylesheet"
@@ -104,17 +119,19 @@
             pdfCreatedOnFormat: '{{ T "web_generator_pdf_created_on_format" }}',
             missingInput: '{{ T "web_generator_missing_input" }}',
             invalidTime: '{{ T "web_qr_validity_period_invalid_time" }}',
-            tooFarInTheFuture: '{{ T "web_qr_validity_period_earliest_from_error" }}',
+            tooFarInTheFuture:
+                '{{ T "web_qr_validity_period_earliest_from_error" }}',
             invalidRange: '{{ T "web_max_qr_validity_period_error" }}',
-            codeValidityMessage: '{{ T "web_generator_code_validity_message" }}',
+            codeValidityMessage:
+                '{{ T "web_generator_code_validity_message" }}',
             pdfCodeValidDateFormat: '{{ T "web_pdf_code_valid_date_format" }}',
             datepickerFormat: '{{ T "web_date_picker_format" }}',
             datepickerFormatTime: '{{ T "web_date_picker_format_with_time" }}',
         };
     </script>
 
-    {{/* {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }} */}} 
-    {{ $main := resources.Get (printf "js/dist/%s.min.js" $.Site.Params.PageVariant) | fingerprint }} 
+    {{/* {{ $vendors := resources.Get "js/dist/vendors.min.js" | fingerprint }} */}}
+    {{ $main := resources.Get (printf "js/dist/%s.min.js" $.Site.Params.PageVariant) | fingerprint }}
     {{/*
     <script
         type="text/javascript"
