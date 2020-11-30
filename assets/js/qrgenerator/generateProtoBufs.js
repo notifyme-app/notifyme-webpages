@@ -38,7 +38,7 @@ const generateProtoBufs = async (
     });
 
     const content = QRCodeContent.encode(qrCodeContent).finish();
-    const hash = sodium.crypto_hash_sha256(Uint8Array.from([...sodium.crypto_hash_sha256(Uint8Array.from([...content, ...r1])), r2]));
+    const hash = sodium.crypto_hash_sha256(Uint8Array.from([...sodium.crypto_hash_sha256(Uint8Array.from([...content, ...r1])), ...r2]));
 
     const { publicKey, privateKey } = sodium.crypto_box_seed_keypair(hash);
 
