@@ -40,7 +40,7 @@ The sites can be built with the command `hugo --config config.toml,${site_config
 
 ### Start Server
 
-Simlarly a dev server can be started with `hugo --config config.toml,${site_config} server`
+Simlarly a dev server can be started with `hugo --config config.toml,config_dev.toml,${site_config} server`
 
 ### Getting the translations
 

@@ -1,7 +1,7 @@
 languageCode = "de"
 title = "Notify Me - Webpages"
 
-DefaultContentLanguage = "de"
+defaultContentLanguage = "de"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]

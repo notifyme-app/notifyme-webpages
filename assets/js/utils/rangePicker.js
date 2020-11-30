@@ -18,7 +18,7 @@ export { flatpickr as localizedFlatpickr };
 export const flatpickrOptions = {
     enableTime: true,
     altInput: true,
-    altFormat: "d.m.Y H:i",
+    altFormat: window.currentLanguage.datepickerFormatTime,
     time_24hr: true,
     onClose: function (date, str, picker) {
         if (picker.input.value === "") {

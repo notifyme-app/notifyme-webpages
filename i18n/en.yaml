@@ -73,7 +73,7 @@ web_landing_app_store_link:
 web_landing_play_store_link: 
     other: "https://example.com"
 web_generator_pdf_created_on_format: 
-    other: "Created on %d.%m.%Y at %H:%M"
+    other: "Created on %e %B %Y at %H:%M"
 web_generator_category_canteen: 
     other: "Canteen"
 web_generator_category_library: 
@@ -96,3 +96,7 @@ web_generator_code_validity_message:
     other: "This demo QR code is valid on **%e %B %Y**"
 web_pdf_code_valid_date_format: 
     other: "%e %B %Y"
+web_date_picker_format: 
+    other: "j F Y"
+web_date_picker_format_with_time: 
+    other: "j F Y H:i"

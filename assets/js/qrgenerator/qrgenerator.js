@@ -156,7 +156,7 @@ export const initializeQrGenerator = () => {
     const validDateInput = document.getElementById("validDate");
     const options = Object.assign({}, flatpickrOptions, {
         enableTime: false,
-        altFormat: "d.m.Y",
+        altFormat: window.currentLanguage.datepickerFormat,
         onChange: (date, str, picker) =>
             picker.element.parentNode.children[1].classList.remove("invalid"),
     });
