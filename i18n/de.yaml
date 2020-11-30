@@ -108,5 +108,5 @@ web_generator_validity_information:
     other: "Die Demo QR-Codes sind jeweils nur an einem Tag gültig"
 web_generator_code_validity_message: 
     other: "Dieser Demo QR-Code ist gültig am **%d.%m.%Y**"
-web_pdf_code_validity_message: 
-    other: "Dieser Demo QR-Code ist gültig am\\\n%d.%m.%Y"
+web_pdf_code_valid_date_format: 
+    other: "%d.%m.%Y"

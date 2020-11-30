@@ -92,3 +92,7 @@ web_qr_validity_period_from_label:
     other: "de"
 web_qr_validity_period_to_label: 
     other: "à"
+web_generator_code_validity_message: 
+    other: "Ce code QR démo est valable le **%d.%m.%Y**"
+web_pdf_code_valid_date_format: 
+    other: "%d.%m.%Y"

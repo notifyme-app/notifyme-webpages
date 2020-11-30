@@ -177,31 +177,18 @@ const generatePDF = async (publicMessage, privateMessage, data) => {
     });
 
     const validMessage = strftime(
-        window.currentLanguage.pdfCodeValidityMessage,
+        window.currentLanguage.pdfCodeValidDateFormat,
         data.validFrom
-    ).split("\\\n");
-    console.log(validMessage);
-    const validSize = 13.9;
-    const firstLineWidth = interLight.widthOfTextAtSize(
-        validMessage[0],
-        validSize
+    ).trim();
+    const validDateSize = 13.9;
+    const validDateWidth = interBold.widthOfTextAtSize(
+        validMessage,
+        validDateSize
     );
-    publicPage.drawText(validMessage[0], {
-        x: publicPage.getWidth() / 2 - firstLineWidth / 2,
-        y: 172.8 + 19.1, // one line-height above second line
-        size: validSize,
-        font: interLight,
-        color: rgb(0, 0, 0),
-    });
-
-    const secondLineWidth = interBold.widthOfTextAtSize(
-        validMessage[1],
-        validSize
-    );
-    publicPage.drawText(validMessage[1], {
-        x: publicPage.getWidth() / 2 - secondLineWidth / 2,
-        y: 172.8,
-        size: validSize,
+    publicPage.drawText(validMessage, {
+        x: publicPage.getWidth() / 2 - validDateWidth / 2,
+        y: 173,
+        size: validDateSize,
         font: interBold,
         color: rgb(0, 0, 0),
     });
