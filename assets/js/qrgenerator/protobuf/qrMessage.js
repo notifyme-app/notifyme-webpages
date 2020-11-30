@@ -19,50 +19,40 @@ export default {
                 },
                 QRCodeContent: {
                     fields: {
-                        version: {
-                            rule: "required",
-                            type: "int32",
-                            id: 1,
-                        },
-                        publicKey: {
-                            rule: "required",
-                            type: "bytes",
-                            id: 2,
-                        },
                         name: {
                             rule: "required",
                             type: "string",
-                            id: 3,
+                            id: 1,
                         },
                         location: {
                             rule: "required",
                             type: "string",
-                            id: 4,
+                            id: 2,
                         },
                         room: {
                             rule: "required",
                             type: "string",
-                            id: 5,
+                            id: 3,
                         },
                         venueType: {
                             rule: "required",
                             type: "VenueType",
-                            id: 6,
+                            id: 4,
                         },
                         notificationKey: {
                             rule: "required",
                             type: "bytes",
-                            id: 7,
+                            id: 5,
                         },
                         validFrom: {
                             rule: "optional",
                             type: "uint64",
-                            id: 8,
+                            id: 6,
                         },
                         validTo: {
                             rule: "optional",
                             type: "uint64",
-                            id: 9,
+                            id: 7,
                         },
                     },
                 },
@@ -73,18 +63,47 @@ export default {
                             type: "int32",
                             id: 1,
                         },
-                        content: {
+                        publicKey: {
                             rule: "required",
-                            type: "QRCodeContent",
+                            type: "bytes",
                             id: 2,
                         },
-                        signature: {
+                        r2: {
                             rule: "required",
                             type: "bytes",
                             id: 3,
+                        },                                                
+                        content: {
+                            rule: "required",
+                            type: "QRCodeContent",
+                            id: 4,
                         },
                     },
                 },
+                QRCodeTrace: {
+                    fields: {
+                        version: {
+                            rule: "required",
+                            type: "int32",
+                            id: 1,
+                        },
+                        r1: {
+                            rule: "required",
+                            type: "bytes",
+                            id: 2,
+                        },                        
+                        r2: {
+                            rule: "required",
+                            type: "bytes",
+                            id: 3,
+                        },                                                
+                        content: {
+                            rule: "required",
+                            type: "QRCodeContent",
+                            id: 4,
+                        },
+                    },
+                },                
             },
         },
     },
