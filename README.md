@@ -30,13 +30,13 @@ The full set of documents for CrowdNotifier is at https://github.com/CrowdNotifi
 
 ### Build Site
 
-You can build two different Webpages from this code. They are defined in their respective config files:
+You can build three different Webpages from this code. They are defined in their respective config files:
 
 -   QR-Generator `config_qrgenerator.toml`
 -   QR Upload Page `config_uploadpage.toml`
 -   Landing Page `config_landingpage.toml`
 
-The sites can be built with the command `hugo --config config.toml,${site_config}`. The build files are placed in the `public/` folder.
+The sites can be built with the command `hugo --config config.toml,${site_config}`. For this to work, you need to first precompile the javascript files. The build files are placed in the `public/` folder.
 
 ### Start Server
 
