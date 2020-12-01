@@ -10,10 +10,11 @@ This web app serves content to devices that don't have the [NotifyMe App](https:
 ## Repositories
 * Android SDK: [crowdnotifier-sdk-android](https://github.com/CrowdNotifier/crowdnotifier-sdk-android)
 * iOS SDK: [crowdnotifier-sdk-ios](https://github.com/CrowdNotifier/crowdnotifier-sdk-ios)
+* TypeScript Reference Implementation: [crowdnotifier-ts](https://github.com/CrowdNotifier/crowdnotifier-ts)
 * Android Demo App: [notifyme-app-android](https://github.com/notifyme-app/notifyme-app-android)
 * iOS Demo App: [notifyme-app-ios](https://github.com/notifyme-app/notifyme-app-ios)
 * Backend SDK: [notifyme-sdk-backend](https://github.com/notifyme-app/notifyme-sdk-backend)
-* Webpages: [notifyme-webpages](https://github.com/notifyme-app/notifyme-webpages)
+* Web Apps: [notifyme-webpages](https://github.com/notifyme-app/notifyme-webpages)
 
 ## Work in Progress
 The NotifyMe SDK Backend contains alpha-quality code only and is not yet complete. It has not yet been reviewed or audited for security and compatibility. We are both continuing the development and have started a security review. This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
@@ -50,6 +51,6 @@ If you have your own translations on POEditor, you can simply run `getTranslatio
 
     api_token = 'YOUR_POEDITOR_API_KEY'
     project_id = 'YOUR_POEDITOR_PROJECT_ID'
-    
+
 ## License
 This project is licensed under the terms of the MPL 2 license. See the [LICENSE](LICENSE) file.
