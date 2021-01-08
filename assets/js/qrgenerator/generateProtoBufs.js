@@ -23,9 +23,19 @@ const generateProtoBufs = async (
     await waitReady();
 
     const healthAuthorityPublicKey = sodium.from_hex(`${public_key}`);
-    const infoBinary = sodium.from_string([venueType, name, location, room].join(':'));
-    const locationCode = genCode(healthAuthorityPublicKey, infoBinary);
     const notificationKey = sodium.crypto_secretbox_keygen();
+
+    const data = QRCodeContent.create({
+        name: name,
+        location: location,
+        room: room,
+        venueType: venueType,
+        notificationKey: notificationKey,
+        validFrom: validFrom,
+        validTo: validTo
+    });
+    const infoBinary = QRCodeContent.encode(data).finish();
+    const locationCode = genCode(healthAuthorityPublicKey, infoBinary);
 
     const mtr = new MasterTrace({
         masterPublicKey: locationCode.mtr.mpk.serialize(),
@@ -43,15 +53,6 @@ const generateProtoBufs = async (
     });
 
     // entry 
-    const data = QRCodeContent.create({
-        name: name,
-        location: location,
-        room: room,
-        venueType: venueType,
-        notificationKey: notificationKey,
-        validFrom: validFrom,
-        validTo: validTo
-    });
     const qrEntry = QRCodeEntry.create({
         version: 2,
         data,

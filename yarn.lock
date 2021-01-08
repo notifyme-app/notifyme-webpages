@@ -842,9 +842,9 @@
     to-fast-properties "^2.0.0"
 
 "@c4dt/libcrowdnotifier@^1.0.6":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@c4dt/libcrowdnotifier/-/libcrowdnotifier-1.0.5.tgz#6b9d5942580d855b4942f1ad8935bf4b9ea35e2e"
-  integrity sha512-ua0waqcXlPu90NsoMW80JDKghllAbtETDfLR9vZAwfcnAPLoteSq7EfDs5t0o07dLu8EHG1qrmu8nU2Ge7qlcA==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@c4dt/libcrowdnotifier/-/libcrowdnotifier-1.0.6.tgz#9a8d4bc174643c7afc910c0c8259e9bf592fca90"
+  integrity sha512-eA0bV07J066Z6KzluqBn+C15yXYVNT3nKSiVfdfEv8gDg/UeTyGCOf95yxOPCaX1aX1EO7//jfrKg/bPMML6ZA==
   dependencies:
     libsodium-wrappers-sumo "^0.7.8"
     mcl-wasm "^0.7.1"
@@ -968,9 +968,9 @@
   integrity sha512-Zw1vhUSQZYw+7u5dAwNbIA9TuTotpzY/OF7sJM9FqPOF3SPjKnxrjoTktXDZgUjybf4cWVBP7O8wvKdSaGHweg==
 
 "@types/node@^13.7.0":
-  version "13.13.30"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.30.tgz#1ed6e01e4ca576d5aec9cc802cc3bcf94c274192"
-  integrity sha512-HmqFpNzp3TSELxU/bUuRK+xzarVOAsR00hzcvM0TXrMlt/+wcSLa5q6YhTb6/cA6wqDCZLDcfd8fSL95x5h7AA==
+  version "13.13.39"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.39.tgz#237d071fb593d3aaa96f655a8eb2f91e0fb1480c"
+  integrity sha512-wct+WgRTTkBm2R3vbrFOqyZM5w0g+D8KnhstG9463CJBVC3UVZHMToge7iMBR1vDl/I+NWFHUeK9X+JcF0rWKw==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"

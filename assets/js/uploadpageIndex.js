@@ -46,6 +46,8 @@ const uploadData = async (button) => {
         return;
     }
 
+    const qrTrace = QRCodeTrace.decode(sodium.from_base64(payload));
+
     const postFormData = new FormData();
     postFormData.append("ctx", payload);
     postFormData.append("startTime", data.from);
