@@ -841,10 +841,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@c4dt/libcrowdnotifier@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@c4dt/libcrowdnotifier/-/libcrowdnotifier-1.0.4.tgz#461b29dfdfd04da2d0ab49167aab336a366b6027"
-  integrity sha512-q8/XroFWHPS3GexN72n2XLkhNUiwwBSKI3MqcBXXBi8icU7LPDool4uI8OP6sfw8S9GO83TjE6kJmNNfmxrFUA==
+"@c4dt/libcrowdnotifier@^1.0.6":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@c4dt/libcrowdnotifier/-/libcrowdnotifier-1.0.5.tgz#6b9d5942580d855b4942f1ad8935bf4b9ea35e2e"
+  integrity sha512-ua0waqcXlPu90NsoMW80JDKghllAbtETDfLR9vZAwfcnAPLoteSq7EfDs5t0o07dLu8EHG1qrmu8nU2Ge7qlcA==
   dependencies:
     libsodium-wrappers-sumo "^0.7.8"
     mcl-wasm "^0.7.1"
