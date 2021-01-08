@@ -1,13 +1,6 @@
 import {
-    genCode, genPreTrace, genTrace, IEncryptedData, ILocationData,
-    QRCodeContent,
-    MasterTrace, match,
-    mcl,
-    PreTrace, TraceProof, PreTraceWithProof,
-    QRCodeEntry, QRCodeTrace, scan,
-    setupHA,
-    sodium,
-    Trace, verifyTrace,
+    genCode, QRCodeContent,
+    MasterTrace, QRCodeEntry, QRCodeTrace, sodium,
     waitReady,
 } from '@c4dt/libcrowdnotifier';
 
