@@ -54,6 +54,11 @@ module.exports = (env) => {
                 POST_URL: JSON.stringify(env.POST_URL),
                 GIT_INFO: JSON.stringify(env.GIT_INFO),
             }),
+            // fix "process is not defined" error:
+            // (do "npm install process" before running the build)
+            new webpack.ProvidePlugin({
+                process: 'process/browser',
+            }),
         ],
         // optimization: {
         //     splitChunks: {

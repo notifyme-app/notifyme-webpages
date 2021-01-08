@@ -83,7 +83,7 @@ const generateKeys = async (qrButton) => {
     data.validTo = new Date(data.validFrom.getTime());
     data.validTo.setDate(data.validTo.getDate() + 1);
 
-    const { privateMessage, publicMessage } = await generateProtoBufs(
+    const { qrTrace, qrEntry } = await generateProtoBufs(
         data.title,
         data.subtitle,
         data.addition,
@@ -95,12 +95,12 @@ const generateKeys = async (qrButton) => {
 
     showFormData(data);
 
-    const publicImg = await generateDataURL(`${BASE_URL}#${publicMessage}`, {
+    const publicImg = await generateDataURL(`${BASE_URL}#${qrEntry}`, {
         width: 161,
         color: { dark: "#413f8d" },
     });
     const privateImg = await generateDataURL(
-        `${UPLOAD_URL}#${privateMessage}`,
+        `${UPLOAD_URL}#${qrTrace}`,
         { width: 161, color: { dark: "#f34e70" } }
     );
 
@@ -116,7 +116,7 @@ const generateKeys = async (qrButton) => {
     document.getElementById("qrgenerator").style.display = "none";
     document.getElementById("qrcodes").style.display = "block";
 
-    const pdfBytes = await generatePDF(publicMessage, privateMessage, data);
+    const pdfBytes = await generatePDF(qrEntry, qrTrace, data);
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     pdfButton.setAttribute("href", window.URL.createObjectURL(blob));
 

@@ -1,11 +1,15 @@
-import protobuf from "protobufjs";
-import _sodium from "libsodium-wrappers-sumo";
-import qrMessage from "./protobuf/qrMessage";
-
-const rootQr = protobuf.Root.fromJSON(qrMessage);
-const QRCodeContent = rootQr.lookupType("qrpackage.QRCodeContent");
-const QRCodeWrapper = rootQr.lookupType("qrpackage.QRCodeWrapper");
-const QRCodeTrace = rootQr.lookupType("qrpackage.QRCodeTrace");
+import {
+    genCode, genPreTrace, genTrace, IEncryptedData, ILocationData,
+    QRCodeContent,
+    MasterTrace, match,
+    mcl,
+    PreTrace, TraceProof, PreTraceWithProof,
+    QRCodeEntry, QRCodeTrace, scan,
+    setupHA,
+    sodium,
+    Trace, verifyTrace,
+    waitReady,
+} from '@c4dt/libcrowdnotifier';
 
 const generateProtoBufs = async (
     name,
@@ -16,57 +20,44 @@ const generateProtoBufs = async (
     validFrom,
     validTo
 ) => {
-    await _sodium.ready;
-    const sodium = _sodium;
+    await waitReady();
 
-    const authorityPublicKey = sodium.from_hex(`${public_key}`);
+    const healthAuthorityPublicKey = sodium.from_hex(`${public_key}`);
+    const infoBinary = sodium.from_string([venueType, name, location, room].join(':'));
+    const locationCode = genCode(healthAuthorityPublicKey, infoBinary);
 
-    const r1 = sodium.randombytes_buf(32);
-    const r2 = sodium.randombytes_buf(32);
+    const mtr = new MasterTrace({
+        masterPublicKey: locationCode.mtr.mpk.serialize(),
+        masterSecretKeyLocation: locationCode.mtr.mskl.serialize(),
+        info: locationCode.mtr.info,
+        nonce1: locationCode.mtr.nonce1,
+        nonce2: locationCode.mtr.nonce2,
+        cipherTextHealthAuthority: locationCode.mtr.ctxtha,
+    });
+    
+    // trace
+    const qrTrace = new QRCodeTrace({
+        version: 2,
+        masterTraceRecord: mtr,
+    });
 
-    const notificationKey = sodium.crypto_secretbox_keygen();
-
-    let qrCodeContent = QRCodeContent.create({
-        version: 1,
+    // entry 
+    const data = QRCodeContent.create({
         name: name,
         location: location,
         room: room,
         venueType: venueType,
-        notificationKey: notificationKey,
-        validFrom: validFrom.getTime(),
-        validTo: validTo.getTime(),
     });
-
-    const content = QRCodeContent.encode(qrCodeContent).finish();
-    const hash = sodium.crypto_hash_sha256(Uint8Array.from([...sodium.crypto_hash_sha256(Uint8Array.from([...content, ...r1])), ...r2]));
-
-    const { publicKey, privateKey } = sodium.crypto_box_seed_keypair(hash);
-
-
-    let qrTrace = QRCodeTrace.create({
-        version: 1,
-        r1: r1,
-        r2: r2,
-        content: qrCodeContent,
+    const qrEntry = QRCodeEntry.create({
+        version: 2,
+        data,
+        masterPublicKey: locationCode.ent.serialize(),
+        entryProof: locationCode.pEnt,
     });
-
-    let qrCodeWrapper = QRCodeWrapper.create({
-        version: 1,
-        publicKey: publicKey,
-        r1: r1,
-        content: qrCodeContent,
-    });
-
-    const qrCodeTraceProtoBufBytes = QRCodeTrace.encode(qrTrace).finish();
-
-    const ctx = sodium.crypto_box_seal(qrCodeTraceProtoBufBytes, authorityPublicKey);
-    const qrCodeWrapperProtoBufBytes = QRCodeWrapper.encode(
-        qrCodeWrapper
-    ).finish();
 
     return {
-        privateMessage: sodium.to_base64(ctx),
-        publicMessage: sodium.to_base64(qrCodeWrapperProtoBufBytes),
+        qrTrace: sodium.to_base64(QRCodeTrace.encode(qrTrace).finish()),
+        qrEntry: sodium.to_base64(QRCodeEntry.encode(qrEntry).finish()),
     };
 };
 

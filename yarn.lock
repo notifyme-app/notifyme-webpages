@@ -841,6 +841,15 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@c4dt/libcrowdnotifier@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@c4dt/libcrowdnotifier/-/libcrowdnotifier-1.0.4.tgz#461b29dfdfd04da2d0ab49167aab336a366b6027"
+  integrity sha512-q8/XroFWHPS3GexN72n2XLkhNUiwwBSKI3MqcBXXBi8icU7LPDool4uI8OP6sfw8S9GO83TjE6kJmNNfmxrFUA==
+  dependencies:
+    libsodium-wrappers-sumo "^0.7.8"
+    mcl-wasm "^0.7.1"
+    protobufjs "^6.10.1"
+
 "@nicolo-ribaudo/chokidar-2@^2.1.8":
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8.tgz#eef8d9b47e8dc589499f14d656e8d2dd978c3d14"
@@ -2548,7 +2557,7 @@ leven@^3.1.0:
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
   integrity sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==
 
-libsodium-sumo@^0.7.0, libsodium-sumo@^0.7.8:
+libsodium-sumo@^0.7.0:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/libsodium-sumo/-/libsodium-sumo-0.7.8.tgz#66789762e45c521a2373808eb7c8184120f61bab"
   integrity sha512-5ev5rkfWQwrf77OI0R/qnrqtwF7gyq9mklid46o+sc9YfZBzjg1VgbU56/+nFv8B9tE37OdG6w0fyJuvyNElzg==
@@ -2640,6 +2649,11 @@ materialize-css@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0.tgz#8d5db1c4a81c6d65f3b2e2ca83a8e08daa24d1be"
   integrity sha512-4/oecXl8y/1i8RDZvyvwAICyqwNoKU4or5uf8uoAd74k76KzZ0Llym4zhJ5lLNUskcqjO0AuMcvNyDkpz8Z6zw==
+
+mcl-wasm@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/mcl-wasm/-/mcl-wasm-0.7.1.tgz#c5de89bb103e2780229a1375c6aba9b3ef64c8ef"
+  integrity sha512-zNMX6yXI3YYHvMvLTZruSb6OM3M3muEOyfkc5h0K3I4/PDdHSLPnIv2VU+GbjnoQUzUVLMawMV/rcAL8JXogAQ==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -3049,7 +3063,12 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-protobufjs@^6.10.2:
+process@^0.11.10:
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+  integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
+
+protobufjs@^6.10.1, protobufjs@^6.10.2:
   version "6.10.2"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.10.2.tgz#b9cb6bd8ec8f87514592ba3fdfd28e93f33a469b"
   integrity sha512-27yj+04uF6ya9l+qfpH187aqEzfCF4+Uit0I9ZBQVqK09hk/SQzKa2MUqUpXaVa7LOFRg1TSSr3lVxGOk6c0SQ==
