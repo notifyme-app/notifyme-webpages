@@ -63,14 +63,14 @@ const uploadData = async (button) => {
             html: window.currentLanguage.uploadSuccessMessage,
             classes: "green lighten-2",
         });
+        disableButton(button, false);
     } else {
         M.toast({
             html: window.currentLanguage.uploadErrorMessage,
             classes: "red lighten-2",
         });
+        enableButton(button);
     }
-
-    enableButton(button);
 };
 
 ready(() => {

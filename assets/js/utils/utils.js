@@ -1,7 +1,7 @@
-export const disableButton = (button) => {
+export const disableButton = (button, showPreloader = true) => {
     button.classList.add("disabled");
     button.getElementsByClassName("preloader-wrapper")[0].style.display =
-        "block";
+        showPreloader ? "block" : "none";
 };
 
 export const enableButton = (button) => {
