@@ -31,8 +31,8 @@ const generateProtoBufs = async (
         room: room,
         venueType: venueType,
         notificationKey: notificationKey,
-        validFrom: validFrom,
-        validTo: validTo
+        validFrom: validFrom.getTime(),
+        validTo: validTo.getTime()
     });
     const infoBinary = QRCodeContent.encode(data).finish();
     const locationCode = genCode(healthAuthorityPublicKey, infoBinary);
