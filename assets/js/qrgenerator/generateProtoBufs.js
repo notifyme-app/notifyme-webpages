@@ -43,6 +43,7 @@ const generateProtoBufs = async (
     const qrTrace = new QRCodeTrace({
         version: 2,
         masterTraceRecord: mtr,
+        notificationKey: notificationKey
     });
 
     // entry 
