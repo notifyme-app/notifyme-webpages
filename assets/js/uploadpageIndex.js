@@ -56,8 +56,8 @@ const preTraceFun = (qrTrace, counts) => {
 }
 
 const getAffectedHours = (from, to) => {
-    const startHour = from / ONE_HOUR_IN_MILLISECONDS;
-    const endHour = to / ONE_HOUR_IN_MILLISECONDS;
+    const startHour = Math.floor(from / ONE_HOUR_IN_MILLISECONDS);
+    const endHour = Math.floor(to / ONE_HOUR_IN_MILLISECONDS);
     const result = [];
     for (var i = startHour; i <= endHour; i++) {
         result.push(i);
