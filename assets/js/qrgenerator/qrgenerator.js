@@ -36,7 +36,7 @@ const generateKeys = async (qrButton) => {
         title: formData.get("title"),
         subtitle: formData.get("subtitle"),
         addition: formData.get("addition"),
-        category: formData.get("category"),
+        category: parseInt(formData.get("category")),
         validDate: formData.get("validDate"),
         // validFrom: formData.get("validFrom"),
         // validTo: formData.get("validTo"),

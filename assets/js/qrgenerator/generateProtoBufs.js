@@ -18,6 +18,10 @@ const generateProtoBufs = async (
     const healthAuthorityPublicKey = sodium.from_hex(`${public_key}`);
     const notificationKey = sodium.crypto_secretbox_keygen();
 
+    if (venueType == 0) {
+        venueType = undefined;
+    }
+    
     const data = QRCodeContent.create({
         name: name,
         location: location,
