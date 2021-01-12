@@ -40,6 +40,7 @@ const preTraceFun = (qrTrace, counts) => {
         identity: preTrace.id,
         cipherTextHealthAuthority: preTrace.ctxtha,
         partialSecretKeyForIdentityOfLocation: preTrace.pskidl.serialize(),
+        notificationKey: qrTrace.notificationKey
     });
     const traceProofProto = TraceProof.create({
         masterPublicKey: traceProof.mpk.serialize(),
