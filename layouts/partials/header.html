@@ -3,7 +3,7 @@
       <img src="images/logo.svg" alt="Logo" />
       <h1>Notify<span class="primary-color">Me</span></h1>
     </a>
-    <div class="language-selection">
+    <div id="language-selection">
         {{ $lang := .Site.Language.Lang }}
         {{ range .AllTranslations }}
           {{ if eq $lang .Lang }}

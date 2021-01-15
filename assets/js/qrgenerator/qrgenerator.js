@@ -1,6 +1,6 @@
 import strftime from "strftime";
 import generateProtoBufs from "./generateProtoBufs";
-import { generateDataURL } from "./generateQrCode";
+import { generateSvg } from "./generateQrCode";
 import { disableButton, enableButton } from "../utils/utils";
 import generatePDF from "./generatePdf";
 import {
@@ -95,26 +95,23 @@ const generateKeys = async (qrButton) => {
 
     showFormData(data);
 
-    const publicImg = await generateDataURL(`${BASE_URL}#${qrEntry}`, {
+    const publicImg = await generateSvg(`${BASE_URL}#${qrEntry}`, {
         width: 161,
         color: { dark: "#413f8d" },
     });
-    const privateImg = await generateDataURL(
-        `${UPLOAD_URL}#${qrTrace}`,
-        { width: 161, color: { dark: "#f34e70" } }
-    );
+    const privateImg = await generateSvg(`${UPLOAD_URL}#${qrTrace}`, {
+        width: 161,
+        color: { dark: "#f34e70" },
+    });
 
-    document.querySelector(
-        "#public-qr-card .qr-code"
-    ).innerHTML = `<img src=${publicImg} alt"">`;
-    document.querySelector(
-        "#private-qr-card .qr-code"
-    ).innerHTML = `<img src=${privateImg} alt"">`;
+    document.querySelector("#public-qr-card .qr-code").innerHTML = publicImg;
+    document.querySelector("#private-qr-card .qr-code").innerHTML = privateImg;
 
     enableButton(qrButton);
 
     document.getElementById("qrgenerator").style.display = "none";
     document.getElementById("qrcodes").style.display = "block";
+    document.getElementById("language-selection").style.display = "none";
 
     const pdfBytes = await generatePDF(qrEntry, qrTrace, data);
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
@@ -126,6 +123,7 @@ const generateKeys = async (qrButton) => {
 const backToGenerator = () => {
     document.getElementById("qrgenerator").style.display = "block";
     document.getElementById("qrcodes").style.display = "none";
+    document.getElementById("language-selection").style.display = "block";
 };
 
 export const initializeQrGenerator = () => {
