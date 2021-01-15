@@ -69,9 +69,9 @@ web_upload_missing_payload:
 web_landing_description: 
     other: "Check-in for meetings and events."
 web_landing_app_store_link: 
-    other: "https://itunes.apple.com/app/id1537859001"
+    other: "https://apps.apple.com/app/id1537859001"
 web_landing_play_store_link: 
-    other: "https://example.com"
+    other: "https://play.google.com/store/apps/details?id=ch.ubique.notifyme"
 web_generator_pdf_created_on_format: 
     other: "Created on %e %B %Y at %H:%M"
 web_generator_category_canteen: 
