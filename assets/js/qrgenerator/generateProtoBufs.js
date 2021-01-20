@@ -21,6 +21,9 @@ const generateProtoBufs = async (
     if (venueType == 0) {
         venueType = undefined;
     }
+    if (!room) {
+        room = undefined;
+    }
     
     const data = QRCodeContent.create({
         name: name,

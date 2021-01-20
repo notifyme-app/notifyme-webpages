@@ -101,7 +101,7 @@ const generateKeys = async (qrButton) => {
     });
     const privateImg = await generateSvg(`${UPLOAD_URL}#${qrTrace}`, {
         width: 161,
-        color: { dark: "#f34e70" },
+        color: { dark: "#C43F5B" },
     });
 
     document.querySelector("#public-qr-card .qr-code").innerHTML = publicImg;

@@ -105,7 +105,7 @@ web_generator_date_label:
 web_generator_date_placeholder: 
     other: "Datum wählen"
 web_generator_validity_information: 
-    other: "Die Demo QR-Codes sind jeweils nur an einem Tag gültig"
+    other: "Die Demo QR-Codes sind jeweils nur an einem Tag gültig. Für QR-Codes die länger gültig sind, nehmen Sie bitte <a href=\"mailto:info@notify-me.ch\">mit uns Kontakt</a> auf."
 web_generator_code_validity_message: 
     other: "Dieser Demo QR-Code ist gültig am **%d.%m.%Y**"
 web_pdf_code_valid_date_format: 
