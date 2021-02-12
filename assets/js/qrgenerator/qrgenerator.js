@@ -23,6 +23,15 @@ const showFormData = (data) => {
     ).replace(/\*\*(.+)\*\*/, "<b>$1</b>");
 };
 
+const localizedUrl = (url) => {
+    const chunks = url.split("?");
+    if(chunks.length > 1) {
+        return `${chunks[0]}${chunks[0].endsWith("/") ? "" : "/"}${window.currentLanguage.shortcode}?${chunks[1]}`;
+    } else {
+        return `${url}${url.endsWith("/") ? "" : "/"}${window.currentLanguage.shortcode}`;
+    }
+}
+
 const generateKeys = async (qrButton) => {
     if (qrButton.classList.contains("disabled")) return;
 
@@ -99,7 +108,8 @@ const generateKeys = async (qrButton) => {
         width: 161,
         color: { dark: "#413f8d" },
     });
-    const privateImg = await generateSvg(`${UPLOAD_URL}/${window.currentLanguage.shortcode}#${qrTrace}`, {
+
+    const privateImg = await generateSvg(`${localizedUrl(UPLOAD_URL)}/${window.currentLanguage.shortcode}#${qrTrace}`, {
         width: 161,
         color: { dark: "#C43F5B" },
     });

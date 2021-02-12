@@ -9,7 +9,7 @@
           {{ if eq $lang .Lang }}
             <span>{{ .Lang }}</span>
           {{ else }}
-            <a href="javascript:void(0)" data-href="{{ .Permalink }}" onclick="window.location.href = `${this.dataset.href}${window.location.hash}`;">{{ .Lang }}</a>
+            <a href="javascript:void(0)" data-href="{{ .Permalink }}" onclick="window.location.href = `${this.dataset.href}${window.location.search}${window.location.hash}`;">{{ .Lang }}</a>
           {{ end }}
         {{ end }}
       </div>
