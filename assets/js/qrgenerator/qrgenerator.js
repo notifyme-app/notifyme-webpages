@@ -25,10 +25,17 @@ const showFormData = (data) => {
 
 const localizedUrl = (url) => {
     const chunks = url.split("?");
+    var currentLanguage = window.currentLanguage.shortcode;
+
+    // de is default, do net set
+    if (currentLanguage == 'de') {
+        currentLanguage = ''; 
+    }
+
     if(chunks.length > 1) {
-        return `${chunks[0]}${chunks[0].endsWith("/") ? "" : "/"}${window.currentLanguage.shortcode}?${chunks[1]}`;
+        return `${chunks[0]}${chunks[0].endsWith("/") ? "" : "/"}${currentLanguage}?${chunks[1]}`;
     } else {
-        return `${url}${url.endsWith("/") ? "" : "/"}${window.currentLanguage.shortcode}`;
+        return `${url}${url.endsWith("/") ? "" : "/"}${currentLanguage}`;
     }
 }
 
@@ -109,7 +116,7 @@ const generateKeys = async (qrButton) => {
         color: { dark: "#413f8d" },
     });
 
-    const privateImg = await generateSvg(`${localizedUrl(UPLOAD_URL)}/${window.currentLanguage.shortcode}#${qrTrace}`, {
+    const privateImg = await generateSvg(`${localizedUrl(UPLOAD_URL)}#${qrTrace}`, {
         width: 161,
         color: { dark: "#C43F5B" },
     });
