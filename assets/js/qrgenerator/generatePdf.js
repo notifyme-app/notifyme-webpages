@@ -165,7 +165,7 @@ const generatePDF = async (publicMessage, privateMessage, data) => {
         color: rgb(0, 0, 0),
     });
 
-   /* const date = strftime(window.currentLanguage.pdfCreatedOnFormat);
+    const date = strftime(window.currentLanguage.pdfCreatedOnFormat);
     const dateSize = 12;
     const dateWidth = interRegular.widthOfTextAtSize(date, dateSize);
     privatePage.drawText(date, {
@@ -176,7 +176,7 @@ const generatePDF = async (publicMessage, privateMessage, data) => {
         color: rgb(0, 0, 0),
     });
 
-    const validMessage = strftime(
+    /*const validMessage = strftime(
         window.currentLanguage.pdfCodeValidDateFormat,
         data.validFrom
     ).trim();
