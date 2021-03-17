@@ -39,7 +39,7 @@
                             class="validate" maxlength="50">
                         <label for="addition">{{ T "web_generator_addition_label" }}</label>
                     </div>
-                    <!-- <div class="input-field col s12">
+                    <div class="input-field col s12">
                         <input name="validFrom" id="validFrom" type="text" placeholder="{{ T "web_qr_validity_period_from_label" }}" >
                         <label for="validFrom">{{ T "web_qr_validity_period_label" }}*</label>
                         <span class="helper-text"></span>
@@ -47,17 +47,22 @@
                     <div class="input-field col s12 no-label">
                         <input name="validTo" id="validTo" type="text" placeholder="{{ T "web_qr_validity_period_to_label" }}" >
                         <span class="helper-text"></span>
-                    </div> -->
-                    <div class="input-field col s12">
+                    </div>
+                    <!-- <div class="input-field col s12">
                         <input name="validDate" id="validDate" type="text" placeholder="{{ T "web_generator_date_placeholder" }}" >
                         <label for="validDate">{{ T "web_generator_date_label" }}*</label>
                         <span class="helper-text" data-error="{{ T "web_generator_missing_input" }}"></span>
-                    </div>
+                    </div> -->
                 </div>
             </form>
+
+            
             <div id="validity-information" class="row">
-                <img src="images/info_icon.svg" alt="" />
-                <p>{{ T "web_generator_validity_information" | safeHTML }}</p>
+                <img src="images/info_icon_red.svg" alt="" />
+                <div>
+                    <h6 class="active">{{ T "web_generator_validity_information_title" }}</h6>
+                    <p>{{ T "web_generator_validity_information" | safeHTML }}</p>
+                </div>
             </div>
             <div class="btn-row row">
                 <a id="generate-qr-btn" class="waves-effect waves-light btn">
@@ -119,12 +124,12 @@
                                 {{ T "web_generator_public_bulletpoint_3" }}
                             </div>
                         </div>
-                        <div class="bullet-point">
+                        <!-- <div class="bullet-point">
                             <img class="bullet-icon" src="images/info_icon.svg" alt="">
                             <div class="text" id="info-text">
                                 {{ T "web_generator_code_validity_message" }}
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

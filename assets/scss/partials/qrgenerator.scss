@@ -46,10 +46,15 @@
             #validity-information {
                 display: flex;
 
+                background-color: #fdedf0;
+                border-radius: 15px;
+                padding: 5px;
+
                 img {
                     width: 24px;
                     height: 24px;
                     margin-right: 10px;
+                    margin-top: 7px;
                 }
 
                 p {

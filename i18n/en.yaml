@@ -1,5 +1,5 @@
 web_generator_title: 
-    other: "Generate a QR code demo"
+    other: "Generate a QR code"
 web_generator_category_label: 
     other: "Category"
 web_generator_category_other: 
@@ -19,7 +19,7 @@ web_generator_subtitle_label:
 web_generator_subtitle_placeholder: 
     other: "E.g. organization or organizer"
 web_generator_addition_label: 
-    other: "Addition"
+    other: "Additional information"
 web_generator_addition_placeholder: 
     other: "E.g. building or place"
 web_generator_generation_button_label: 
@@ -31,15 +31,15 @@ web_generator_public_bulletpoint_1:
 web_generator_public_bulletpoint_2: 
     other: "NotifyMe can't scan the code."
 web_generator_public_bulletpoint_3: 
-    other: "Check-ins are not registered. No private are seized."
+    other: "Check-ins are only saved on the users’ devices."
 web_generator_private_bulletpoint_1: 
     other: "This QR code informs visitors in case of an incident."
 web_generator_private_bulletpoint_2: 
     other: "The code can be scanned with any QR code reader."
 web_generator_private_bulletpoint_3: 
-    other: "A decryption key is published. No data of the organizer."
+    other: "A decryption key is published. No data of the organizer is published."
 web_generator_pdf_button: 
-    other: "Dowload PDF"
+    other: "Show PDF"
 web_generator_public_qr_title: 
     other: "<span>Public</span>\\\nQR Code"
 web_generator_private_qr_title: 
@@ -89,7 +89,7 @@ web_generator_category_kitchen_area:
 web_generator_category_office_space: 
     other: "Office Space"
 web_qr_validity_period_label: 
-    other: "Validity (24h max)"
+    other: "Validity"
 web_qr_validity_period_from_label: 
     other: "from"
 web_qr_validity_period_to_label: 
@@ -105,7 +105,7 @@ web_generator_date_label:
 web_generator_date_placeholder: 
     other: "Pick date"
 web_generator_validity_information: 
-    other: "The demo QR codes are only available on the same day."
+    other: "NotifyMe does not collect personal data. It is therefore not a substitute for a participants' list if this is required by the canton. However, it can be used in addition to other tools by quickly informing participants about a possible infection."
 web_generator_code_validity_message: 
     other: "This demo QR code is valid on **%e %B %Y**"
 web_pdf_code_valid_date_format: 
@@ -118,3 +118,5 @@ web_page_title:
     other: "NotifyMe"
 web_page_description: 
     other: "A decentralised check-in system for meetings and events"
+web_generator_validity_information_title: 
+    other: "NotifyMe vs. lists of attendees"

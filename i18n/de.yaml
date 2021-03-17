@@ -1,5 +1,5 @@
 web_generator_title: 
-    other: "Demo QR-Codes erstellen"
+    other: "QR-Codes erstellen"
 web_generator_category_label: 
     other: "Kategorie"
 web_generator_category_other: 
@@ -39,7 +39,7 @@ web_generator_private_bulletpoint_2:
 web_generator_private_bulletpoint_3: 
     other: "Es wird nur ein Entschlüsselungs-Schlüssel veröffentlicht. Keine Angaben zum Veranstalter."
 web_generator_pdf_button: 
-    other: "PDF herunterladen"
+    other: "PDF anzeigen"
 web_generator_public_qr_title: 
     other: "<span>Public</span>\\\nQR-Code"
 web_generator_private_qr_title: 
@@ -49,7 +49,7 @@ web_generator_missing_input:
 web_upload_title: 
     other: "Besucher informieren"
 web_upload_period_label: 
-    other: "Betroffener Zeitraum"
+    other: "Betroffener Zeitraum Von/Bis"
 web_upload_period_from_label: 
     other: "Von"
 web_upload_period_to_label: 
@@ -89,7 +89,7 @@ web_generator_category_kitchen_area:
 web_generator_category_office_space: 
     other: "Büroräume"
 web_qr_validity_period_label: 
-    other: "Gültigkeit (max. 24h)"
+    other: "Gültigkeit"
 web_qr_validity_period_from_label: 
     other: "Von"
 web_qr_validity_period_to_label: 
@@ -105,7 +105,7 @@ web_generator_date_label:
 web_generator_date_placeholder: 
     other: "Datum wählen"
 web_generator_validity_information: 
-    other: "Die Demo QR-Codes sind jeweils nur an einem Tag gültig. Für QR-Codes die länger gültig sind, nehmen Sie bitte <a href=\"mailto:info@notify-me.ch\">mit uns Kontakt</a> auf."
+    other: "NotifyMe erfasst keine persönlichen Daten. Es ist daher kein Ersatz für Teilnehmerlisten, sofern sie vom Kanton eingefordert werden. Es kann aber als Ergänzung eingesetzt werden, um Teilnehmende rasch über eine mögliche Ansteckung zu informieren."
 web_generator_code_validity_message: 
     other: "Dieser Demo QR-Code ist gültig am **%d.%m.%Y**"
 web_pdf_code_valid_date_format: 
@@ -118,3 +118,5 @@ web_page_title:
     other: "NotifyMe"
 web_page_description: 
     other: "Dezentral gespeicherte Check-Ins für Meetings & Events"
+web_generator_validity_information_title: 
+    other: "NotifyMe vs. Kontaktlisten"

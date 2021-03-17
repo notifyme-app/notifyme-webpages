@@ -1,5 +1,5 @@
 web_generator_title: 
-    other: "Créer code QR démo"
+    other: "Créer QR code"
 web_generator_category_label: 
     other: "Catégorie"
 web_generator_category_other: 
@@ -17,37 +17,37 @@ web_generator_title_placeholder:
 web_generator_subtitle_label: 
     other: "Sous-titre"
 web_generator_subtitle_placeholder: 
-    other: "p. ex. Organisation ou organisateur·trice"
+    other: "p. ex. organisation ou organisateur·trice"
 web_generator_addition_label: 
-    other: "Additif"
+    other: "Complément"
 web_generator_addition_placeholder: 
-    other: "p. ex. Bâtiment ou lieu"
+    other: "p. ex. bâtiment ou lieu"
 web_generator_generation_button_label: 
-    other: "Générer un code QR"
+    other: "Générer les QR codes"
 web_generator_back: 
     other: "Retour"
 web_generator_public_bulletpoint_1: 
-    other: "Avec ce code QR les visiteurs peuvent s'enregistrer sur place."
+    other: "Avec ce QR code les visiteurs peuvent s'enregistrer en arrivant."
 web_generator_public_bulletpoint_2: 
-    other: "Le code peut être scanné avec NotifyMe"
+    other: "Le code ne peut être scanné avec NotifyMe"
 web_generator_public_bulletpoint_3: 
-    other: "Aucune données personnelles ne sont saisies. Les enregistrements ne sont pas visibles pour les propriétaires de lieux."
+    other: "Les check-ins ne seront enregistrés que sur l'appareil des utilisateurs."
 web_generator_private_bulletpoint_1: 
-    other: "Ce code QR informe les visiteurs en cas incident."
+    other: "Ce QR code permet aux visiteurs d'être notifiés en cas incident."
 web_generator_private_bulletpoint_2: 
     other: "Le code peut être scanné avec n'importe quel autre lecteur QR."
 web_generator_private_bulletpoint_3: 
-    other: "Seulement une clé de déchiffrement est publiée. Aucune information n'est transmise à l'organisateur."
+    other: "Seulement une clé de déchiffrement est publiée. Aucune information sur l'organisateur n'est transmise au serveur."
 web_generator_pdf_button: 
-    other: "Télécharger PDF"
+    other: "Afficher le PDF"
 web_generator_public_qr_title: 
-    other: "Code QR\\\n<span>publique</span>\n"
+    other: "QR Code\\\n<span>publique</span>\n"
 web_generator_private_qr_title: 
-    other: "Code QR\\\n<span>privé</span>"
+    other: "QR Code\\\n<span>privé</span>"
 web_generator_missing_input: 
     other: "Veuillez remplir le champ obligatoire"
 web_upload_title: 
-    other: "Informer le visiteur"
+    other: "Informer les visiteurs d'un risque d'infection."
 web_upload_period_label: 
     other: "Période concernée"
 web_upload_period_from_label: 
@@ -55,19 +55,19 @@ web_upload_period_from_label:
 web_upload_period_to_label: 
     other: "à"
 web_upload_note_label: 
-    other: "Indication au visiteur"
+    other: "Recommandations aux visiteurs"
 web_upload_note_placeholder: 
     other: "Que faire?"
 web_upload_upload_button: 
-    other: "Informer le visiteur"
+    other: "Informer les visiteurs"
 web_upload_success_message: 
     other: "Téléchargement réussi"
 web_upload_error_message: 
     other: "Téléchargement échoué"
 web_upload_missing_payload: 
-    other: "Code privé invalable. Scannez un code QR valable."
+    other: "Code privé non valable. Scannez un QR code valable."
 web_landing_description: 
-    other: "Check-ins sauvé de manière décentralisé pour réunions et événements."
+    other: "Système de check-in pour réunions et événements."
 web_landing_app_store_link: 
     other: "https://apps.apple.com/app/id1537859001"
 web_landing_play_store_link: 
@@ -81,7 +81,7 @@ web_generator_category_library:
 web_generator_category_lecture_room: 
     other: "Auditoire"
 web_generator_category_shop: 
-    other: "Charger"
+    other: "Commerce"
 web_generator_category_gym: 
     other: "Centre de fitness"
 web_generator_category_kitchen_area: 
@@ -89,7 +89,7 @@ web_generator_category_kitchen_area:
 web_generator_category_office_space: 
     other: "Bureaux"
 web_qr_validity_period_label: 
-    other: "Validité (24h max.)"
+    other: "Validité"
 web_qr_validity_period_from_label: 
     other: "de"
 web_qr_validity_period_to_label: 
@@ -105,9 +105,9 @@ web_generator_date_label:
 web_generator_date_placeholder: 
     other: "Choisir date"
 web_generator_validity_information: 
-    other: "Le code QR démo est uniquement valide le jour même."
+    other: "NotifyMe ne collecte pas de données personnelles. L’application ne remplace donc pas les listes de participants si celles-ci sont exigées par le canton. Cependant, elle peut être utilisée en complément d’autres outils pour informer rapidement les participants sur une éventuelle infection."
 web_generator_code_validity_message: 
-    other: "Ce code QR démo est valable le **%d.%m.%Y**"
+    other: "Ce code QR de démonstration est valable le **%d.%m.%Y**"
 web_pdf_code_valid_date_format: 
     other: "%d.%m.%Y"
 web_date_picker_format: 
@@ -118,3 +118,5 @@ web_page_title:
     other: "NotifyMe"
 web_page_description: 
     other: "Un système d'enregistrement décentralisé pour réunions, rencontres et événements."
+web_generator_validity_information_title: 
+    other: "NotifyMe vs. listes de participants"

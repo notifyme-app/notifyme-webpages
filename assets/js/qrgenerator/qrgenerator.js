@@ -17,10 +17,10 @@ const showFormData = (data) => {
     let subtitle = data.subtitle;
     if (!!data.addition) subtitle += `, ${data.addition}`;
     document.getElementById("qr-subtitle").innerHTML = subtitle;
-    document.getElementById("info-text").innerHTML = strftime(
-        window.currentLanguage.codeValidityMessage,
-        data.validFrom
-    ).replace(/\*\*(.+)\*\*/, "<b>$1</b>");
+    // document.getElementById("info-text").innerHTML = strftime(
+    //     window.currentLanguage.codeValidityMessage,
+    //     data.validFrom
+    // ).replace(/\*\*(.+)\*\*/, "<b>$1</b>");
 };
 
 const localizedUrl = (url) => {
@@ -53,21 +53,21 @@ const generateKeys = async (qrButton) => {
         subtitle: formData.get("subtitle"),
         addition: formData.get("addition"),
         category: parseInt(formData.get("category")),
-        validDate: formData.get("validDate"),
-        // validFrom: formData.get("validFrom"),
-        // validTo: formData.get("validTo"),
+        // validDate: formData.get("validDate"),
+        validFrom: formData.get("validFrom"),
+        validTo: formData.get("validTo"),
     };
 
     if (
         !data.title ||
         !data.subtitle ||
-        !data.validDate
-        // !data.validFrom ||
-        // !data.validTo ||
-        // document
-        //     .querySelector("#validFrom + input")
-        //     .classList.contains("invalid") ||
-        // document.querySelector("#validTo + input").classList.contains("invalid")
+        //!data.validDate
+        !data.validFrom ||
+        !data.validTo ||
+        document
+            .querySelector("#validFrom + input")
+            .classList.contains("invalid") ||
+        document.querySelector("#validTo + input").classList.contains("invalid")
     ) {
         if (!data.title) {
             document.getElementById("title").classList.add("invalid");
@@ -75,29 +75,32 @@ const generateKeys = async (qrButton) => {
         if (!data.subtitle) {
             document.getElementById("subtitle").classList.add("invalid");
         }
-        // if (!data.validFrom) {
-        //     document
-        //         .querySelector("#validFrom + input")
-        //         .classList.add("invalid");
-        // }
-        // if (!data.validTo) {
-        //     document.querySelector("#validTo + input").classList.add("invalid");
-        // }
-        if (!data.validDate) {
+        if (!data.validFrom) {
             document
-                .querySelector("#validDate + input")
+                .querySelector("#validFrom + input")
                 .classList.add("invalid");
         }
+        if (!data.validTo) {
+            document.querySelector("#validTo + input").classList.add("invalid");
+        }
+        // if (!data.validDate) {
+        //     document
+        //         .querySelector("#validDate + input")
+        //         .classList.add("invalid");
+        // }
         enableButton(qrButton);
         return;
     }
 
-    data.validFrom = new Date(
-        Date.parse(data.validDate.trim().replace(" ", "T"))
-    );
-    data.validFrom.setHours(0, 0, 0, 0);
-    data.validTo = new Date(data.validFrom.getTime());
-    data.validTo.setDate(data.validTo.getDate() + 1);
+    // data.validFrom = new Date(
+    //     Date.parse(data.validDate.trim().replace(" ", "T"))
+    // );
+    // data.validFrom.setHours(0, 0, 0, 0);
+    // data.validTo = new Date(data.validFrom.getTime());
+    // data.validTo.setDate(data.validTo.getDate() + 1);
+
+    data.validFrom = new Date(data.validFrom);
+    data.validTo = new Date(data.validTo);
 
     const { qrTrace, qrEntry } = await generateProtoBufs(
         data.title,
@@ -159,21 +162,20 @@ export const initializeQrGenerator = () => {
         backElements[i].onclick = backToGenerator;
     }
 
-    // const validFromInput = document.getElementById("validFrom");
-    // const validToInput = document.getElementById("validTo");
+    const validFromInput = document.getElementById("validFrom");
+    const validToInput = document.getElementById("validTo");
 
-    // rangePicker(validFromInput, validToInput, {
-    //     prohibitPast: true,
-    //     maxRangeInHr: 24,
-    //     maxFutureDays: 7,
-    // });
-
-    const validDateInput = document.getElementById("validDate");
+    // const validDateInput = document.getElementById("validDate");
     const options = Object.assign({}, flatpickrOptions, {
         enableTime: false,
+        prohibitPast: true,
         altFormat: window.currentLanguage.datepickerFormat,
         onChange: (date, str, picker) =>
             picker.element.parentNode.children[1].classList.remove("invalid"),
     });
-    localizedFlatpickr(validDateInput, options);
+
+    //rangePicker(validFromInput, validToInput, options);
+
+    localizedFlatpickr(validFromInput, options);
+    localizedFlatpickr(validToInput, options);
 };
