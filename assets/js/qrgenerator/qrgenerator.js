@@ -113,7 +113,7 @@ const generateKeys = async (qrButton) => {
 
     const publicImg = await generateSvg(`${BASE_URL}#${qrEntry}`, {
         width: 161,
-        color: { dark: "#413f8d" },
+        color: { dark: "#000000" },
     });
 
     const privateImg = await generateSvg(`${localizedUrl(UPLOAD_URL)}#${qrTrace}`, {

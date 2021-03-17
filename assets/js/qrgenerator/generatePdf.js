@@ -45,14 +45,14 @@ const generatePDF = async (publicMessage, privateMessage, data) => {
         });
     const asyncPublicPng = generateDataURL(`${BASE_URL}#${publicMessage}`, {
         width: 192,
-        color: { dark: "#413f8d" },
+        color: { dark: "#000000" },
     }).then(async (url) => {
         await pdfPromise;
         return pdf.embedPng(url);
     });
     const asyncPrivatePng = generateDataURL(`${UPLOAD_URL}#${privateMessage}`, {
         width: 158,
-        color: { dark: "#f34e70" },
+        color: { dark: "#c43f5B" },
     }).then(async (url) => {
         await pdfPromise;
         return pdf.embedPng(url);
