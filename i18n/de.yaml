@@ -40,6 +40,8 @@ web_generator_private_bulletpoint_3:
     other: "Es wird nur ein Entschlüsselungs-Schlüssel veröffentlicht. Keine Angaben zum Veranstalter."
 web_generator_pdf_button: 
     other: "PDF anzeigen"
+web_generator_contact_button:
+    other: "Registrierung Nutzung NotifyMe"    
 web_generator_public_qr_title: 
     other: "<span>Public</span>\\\nQR-Code"
 web_generator_private_qr_title: 
