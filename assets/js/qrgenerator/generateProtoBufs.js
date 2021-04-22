@@ -1,8 +1,11 @@
 import {
-    genCode, QRCodeContent,
-    MasterTrace, QRCodeEntry, QRCodeTrace, sodium,
+    sodium,
     waitReady,
 } from '@c4dt/libcrowdnotifier';
+
+const messages = require("@c4dt/libcrowdnotifier/dist/v3/messages");
+const primitives = require("@c4dt/libcrowdnotifier/dist/v3/crowd_notifier_primitives");
+
 
 const generateProtoBufs = async (
     name,
@@ -24,46 +27,26 @@ const generateProtoBufs = async (
     if (!room) {
         room = undefined;
     }
-    
-    const data = QRCodeContent.create({
-        name: name,
-        location: location,
+
+    const notifyMeLocationData = messages.NotifyMeLocationData.create({
+        version: 1,
+        type: venueType,
         room: room,
-        venueType: venueType,
-        notificationKey: notificationKey,
-        validFrom: validFrom.getTime(),
-        validTo: validTo.getTime()
-    });
-    const infoBinary = QRCodeContent.encode(data).finish();
-    const locationCode = genCode(healthAuthorityPublicKey, infoBinary);
-
-    const mtr = new MasterTrace({
-        masterPublicKey: locationCode.mtr.mpk.serialize(),
-        masterSecretKeyLocation: locationCode.mtr.mskl.serialize(),
-        info: locationCode.mtr.info,
-        nonce1: locationCode.mtr.nonce1,
-        nonce2: locationCode.mtr.nonce2,
-        cipherTextHealthAuthority: locationCode.mtr.ctxtha,
-    });
-    
-    // trace
-    const qrTrace = new QRCodeTrace({
-        version: 2,
-        masterTraceRecord: mtr,
-        notificationKey: notificationKey
     });
 
-    // entry 
-    const qrEntry = QRCodeEntry.create({
-        version: 2,
-        data,
-        masterPublicKey: locationCode.ent.serialize(),
-        entryProof: locationCode.pEnt,
-    });
+    const countryData = messages.NotifyMeLocationData.encode(notifyMeLocationData).finish();
+    const qrCodes = primitives.setupLocation(3, healthAuthorityPublicKey, name, location, validFrom, validTo, countryData);
+
+    const locationProtobufs = {
+        qrCodePayload: messages.QRCodePayload.decode(sodium.from_base64(qrCodes.qrCodePayload)),
+        qrCodeTrace: messages.QRCodeTrace.decode(sodium.from_base64(qrCodes.qrCodeTrace)),
+    };
+
+    console.log(locationProtobufs);
 
     return {
-        qrTrace: sodium.to_base64(QRCodeTrace.encode(qrTrace).finish()),
-        qrEntry: sodium.to_base64(QRCodeEntry.encode(qrEntry).finish()),
+        qrTrace: qrCodes.qrCodeTrace,
+        qrEntry: qrCodes.qrCodePayload,
     };
 };
 
