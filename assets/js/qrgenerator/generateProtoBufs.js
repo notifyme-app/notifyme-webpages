@@ -42,8 +42,6 @@ const generateProtoBufs = async (
         qrCodeTrace: messages.QRCodeTrace.decode(sodium.from_base64(qrCodes.qrCodeTrace)),
     };
 
-    console.log(locationProtobufs);
-
     return {
         qrTrace: qrCodes.qrCodeTrace,
         qrEntry: qrCodes.qrCodePayload,

@@ -103,15 +103,19 @@ const generateKeys = async (qrButton) => {
 
     showFormData(data);
 
-    const publicImg = await generateSvg(`${BASE_URL}#${qrEntry}`, {
+    const publicImgValue = `${BASE_URL}#${qrEntry}`;
+    const publicImg = await generateSvg(publicImgValue, {
         width: 161,
         color: { dark: "#000000" },
     });
+    console.log("Public: " + publicImgValue);
 
-    const privateImg = await generateSvg(`${localizedUrl(UPLOAD_URL)}#${qrTrace}`, {
+    const privateImgValue = `${localizedUrl(UPLOAD_URL)}#${qrTrace}`;
+    const privateImg = await generateSvg(privateImgValue, {
         width: 161,
         color: { dark: "#C43F5B" },
     });
+    console.log("Private: " + privateImgValue);
 
     document.querySelector("#public-qr-card .qr-code").innerHTML = publicImg;
     document.querySelector("#private-qr-card .qr-code").innerHTML = privateImg;
