@@ -76,6 +76,7 @@ module.exports = (env) => {
                 path: require.resolve("path-browserify"),
                 crypto: require.resolve("crypto-browserify"),
                 stream: require.resolve("stream-browserify"),
+                Buffer: require.resolve("buffer/"),
             },
         },
     };

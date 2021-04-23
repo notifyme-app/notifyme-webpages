@@ -4,6 +4,8 @@ import "materialize-css/js/anime.min.js";
 import "materialize-css/js/forms.js";
 import "materialize-css/js/buttons.js";
 import "materialize-css/js/waves.js";
+import "materialize-css/js/dropdown.js";
+import "materialize-css/js/select.js";
 import "materialize-css/js/toasts.js";
 import { disableButton, enableButton, ready } from "./utils/utils";
 import { rangePicker } from "./utils/rangePicker";
@@ -14,11 +16,16 @@ import {
     waitReady,
 } from '@c4dt/libcrowdnotifier';
 
+const messages = require("@c4dt/libcrowdnotifier/dist/v3/messages");
+const primitives = require("@c4dt/libcrowdnotifier/dist/v3/crowd_notifier_primitives");
+
 const ONE_HOUR_IN_MILLISECONDS = 1000 * 60 * 60;
+
+window.Buffer = require('buffer/').Buffer;
 
 ready(() => console.log(`Commit: ${GIT_INFO}`));
 
-const preTraceFun = (qrTrace, counts) => {
+const preTraceFunV2 = (qrTrace, counts) => {
     const masterTraceRecordProto = qrTrace.masterTraceRecord;
     const masterPublicKey = new mcl.G2();
     masterPublicKey.deserialize(masterTraceRecordProto.masterPublicKey);
@@ -65,6 +72,49 @@ const getAffectedHours = (from, to) => {
     return result;
 }
 
+const uploadV2 = async (payload, data) => {
+    const affectedHours = getAffectedHours(data.from, data.to);
+    const qrTrace = QRCodeTrace.decode(sodium.from_base64(payload));
+    const preTraces = [];
+    affectedHours.forEach(function (hour) {
+        preTraces.push(preTraceFunV2(qrTrace, hour));
+    });
+
+    const postFormData = new FormData();
+    postFormData.append("preTraces", preTraces);
+    postFormData.append("affectedHours", affectedHours);
+    postFormData.append("startTime", data.from);
+    postFormData.append("endTime", data.to);
+    postFormData.append("message", data.note);
+    postFormData.append("criticality", data.criticality);
+
+    const response = await fetch(`${POST_URL}` + '/v1/debug/traceKey', {
+        method: "POST",
+        body: postFormData,
+    });
+    return response;
+}
+
+const uploadV3 = async (payload, data) => {
+    const qrCodeTrace = messages.QRCodeTrace.decode(sodium.from_base64(payload));
+    const preTraces = primitives.genPreTrace(
+        qrCodeTrace,
+        Math.round(data.from / 1000),
+        Math.round(data.to / 1000),
+    );
+
+    const postFormData = new FormData();
+    postFormData.append("preTraces", preTraces);
+    postFormData.append("message", data.note);
+    postFormData.append("criticality", data.criticality);
+
+    const response = await fetch(`${POST_URL}` + '/v3/debug/traceKey', {
+        method: "POST",
+        body: postFormData,
+    });
+    return response;
+}
+
 const uploadData = async (button) => {
     if (button.classList.contains("disabled")) return;
 
@@ -77,6 +127,7 @@ const uploadData = async (button) => {
         from: formData.get("from"),
         to: formData.get("to"),
         note: formData.get("note"),
+        criticality: formData.get("criticality")
     };
 
     if (!formData.get("from") || !formData.get("to")) {
@@ -93,6 +144,8 @@ const uploadData = async (button) => {
     data.from = Date.parse(data.from.trim().replace(" ", "T"));
     data.to = Date.parse(data.to.trim().replace(" ", "T"));
 
+    const url = new URL(window.location.href);
+    const version = url.searchParams.get("v");
     const payload = window.location.hash.slice(1);
     if (!payload) {
         M.toast({
@@ -102,24 +155,16 @@ const uploadData = async (button) => {
         enableButton(button);
         return;
     }
-    const affectedHours = getAffectedHours(data.from, data.to);
-    const qrTrace = QRCodeTrace.decode(sodium.from_base64(payload));
-    const preTraces = [];
-    affectedHours.forEach(function (hour) {
-        preTraces.push(preTraceFun(qrTrace, hour));
-    });
 
-    const postFormData = new FormData();
-    postFormData.append("preTraces", preTraces);
-    postFormData.append("affectedHours", affectedHours);
-    postFormData.append("startTime", data.from);
-    postFormData.append("endTime", data.to);
-    postFormData.append("message", data.note);
+    var response;
+    if (version === "2") {
+        console.log("Upload v2");
+        response = await uploadV2(payload, data);
+    } else if (version === "3") {
+        console.log("Upload v3");
+        response = await uploadV3(payload, data);
+    }
 
-    const response = await fetch(`${POST_URL}`, {
-        method: "POST",
-        body: postFormData,
-    });
     console.log(response);
 
     if (response.ok) {
@@ -138,6 +183,9 @@ const uploadData = async (button) => {
 };
 
 ready(() => {
+    const elems = document.querySelectorAll("select.material-select");
+    M.FormSelect.init(elems);
+
     const uploadButton = document.getElementById("upload-btn");
     uploadButton.onclick = () => {
         uploadData(uploadButton);

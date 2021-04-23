@@ -120,3 +120,11 @@ web_page_description:
     other: "A decentralised check-in system for meetings and events"
 web_generator_validity_information_title: 
     other: "NotifyMe vs. lists of attendees"
+web_generator_contact_button: 
+    other: "Register NotifyMe usage"
+web_upload_criticality_label: 
+    other: "Criticality"
+web_upload_criticality_low: 
+    other: "Low"
+web_upload_criticality_high: 
+    other: "High"

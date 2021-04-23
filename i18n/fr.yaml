@@ -39,7 +39,7 @@ web_generator_private_bulletpoint_2:
 web_generator_private_bulletpoint_3: 
     other: "Seulement une clé de déchiffrement est publiée. Aucune information sur l'organisateur n'est transmise au serveur."
 web_generator_pdf_button: 
-    other: "Afficher le PDF"
+    other: "Affiche PDF"
 web_generator_public_qr_title: 
     other: "QR Code\\\n<span>publique</span>\n"
 web_generator_private_qr_title: 
@@ -105,7 +105,7 @@ web_generator_date_label:
 web_generator_date_placeholder: 
     other: "Choisir date"
 web_generator_validity_information: 
-    other: "NotifyMe ne collecte pas de données personnelles. L’application ne remplace donc pas les listes de participants si celles-ci sont exigées par le canton. Cependant, elle peut être utilisée en complément d’autres outils pour informer rapidement les participants sur une éventuelle infection."
+    other: "NotifyMe ne collecte pas de données personnelles. L’application ne remplace donc pas les listes de participants si celles-ci sont exigées par le canton. Cependant, elle peut être utilisée en complément d’autres outils pour informer rapidement les participants d'une éventuelle infection."
 web_generator_code_validity_message: 
     other: "Ce code QR de démonstration est valable le **%d.%m.%Y**"
 web_pdf_code_valid_date_format: 
@@ -120,3 +120,11 @@ web_page_description:
     other: "Un système d'enregistrement décentralisé pour réunions, rencontres et événements."
 web_generator_validity_information_title: 
     other: "NotifyMe vs. listes de participants"
+web_generator_contact_button: 
+    other: "Enregistrer l'utilisation NotifyMe"
+web_upload_criticality_label: 
+    other: "Criticité"
+web_upload_criticality_low: 
+    other: "Faible"
+web_upload_criticality_high: 
+    other: "Élevée"
