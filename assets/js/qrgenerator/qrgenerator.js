@@ -83,24 +83,13 @@ const generateKeys = async (qrButton) => {
         if (!data.validTo) {
             document.querySelector("#validTo + input").classList.add("invalid");
         }
-        // if (!data.validDate) {
-        //     document
-        //         .querySelector("#validDate + input")
-        //         .classList.add("invalid");
-        // }
         enableButton(qrButton);
         return;
     }
 
-    // data.validFrom = new Date(
-    //     Date.parse(data.validDate.trim().replace(" ", "T"))
-    // );
-    // data.validFrom.setHours(0, 0, 0, 0);
-    // data.validTo = new Date(data.validFrom.getTime());
-    // data.validTo.setDate(data.validTo.getDate() + 1);
-
     data.validFrom = new Date(data.validFrom);
     data.validTo = new Date(data.validTo);
+    data.validTo.setDate(data.validTo.getDate() + 1); // until end of day
 
     const { qrTrace, qrEntry } = await generateProtoBufs(
         data.title,
