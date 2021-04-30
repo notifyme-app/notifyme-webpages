@@ -13,7 +13,7 @@
         "build-local-prod:dev:js": "webpack --config webpack.dev.js --env BASE_URL='https://qr.notify-me.ch?v=3' --env PUBLIC_KEY='b83ddb8ea6b76efe407d1006a42ed5f450f2c75120ac676aadf08f874745590b' --env UPLOAD_URL='https://upload.notify-me.ch?v=3' --env POST_URL='https://app-prod-ws.notify-me.ch' --env GIT_INFO=\"$(git log -1 --format='%h, %ad' --date=format:'%d.%m.%Y, %H:%M')\""
     },
     "dependencies": {
-        "@c4dt/libcrowdnotifier": "^1.2.0-prerelease8",
+        "@c4dt/libcrowdnotifier": "1.2.0-prerelease11",
         "@pdf-lib/fontkit": "^1.1.0",
         "flatpickr": "^4.6.6",
         "materialize-css": "^1.0.0",

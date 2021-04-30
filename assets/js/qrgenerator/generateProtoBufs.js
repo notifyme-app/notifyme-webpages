@@ -1,6 +1,6 @@
 import {
     sodium,
-    waitReady,
+    waitReady
 } from '@c4dt/libcrowdnotifier';
 
 const messages = require("@c4dt/libcrowdnotifier/dist/v3/messages");
